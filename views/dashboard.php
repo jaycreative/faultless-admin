@@ -10,7 +10,7 @@
       <link href="css/bootstrap.min.css" rel="stylesheet">
 
       <link href="css/styles.css" rel="stylesheet">
-    </head> 
+    </head>
 
   <body> -->
   <div ng-init="init('ID432223', 'ID396441', 'ID823484')"></div>
@@ -110,13 +110,13 @@
 
                             <th scope="row">{{a.ProductID}}</th>
 
-                      
+
                             <td>{{a.OrderNum}}</td>
                             <td>{{a.HoseType}}</td>
                             <td>{{a.HoseLength}}</td>
                             <td>{{a.CustomerPO}}</td>
                             <td>{{a.NextInspection}}</td>
-                         
+
                           </tr>
 
                         </tbody>
@@ -156,17 +156,17 @@
 
                             <th scope="row">{{x.ProductID}}</th>
 
-                      
+
                             <td>{{x.OrderNum}}</td>
                             <td>{{x.HoseType}}</td>
                             <td>{{x.HoseLength}}</td>
                             <td>{{x.CustomerPO}}</td>
                             <td>{{x.NextInspection}}</td>
-                         
+
                           </tr>
 
                         </tbody>
-                  
+
                   </table>
                 </div>
               </div>
@@ -202,17 +202,17 @@
 
                             <th scope="row">{{x.ProductID}}</th>
 
-                      
+
                             <td>{{x.OrderNum}}</td>
                             <td>{{x.HoseType}}</td>
                             <td>{{x.HoseLength}}</td>
                             <td>{{x.CustomerPO}}</td>
                             <td>{{x.NextInspection}}</td>
-                         
+
                           </tr>
 
                         </tbody>
-                    
+
                   </table>
                 </div>
               </div>
@@ -364,11 +364,11 @@
             </div>
             <div class="modal-body">
               <div class="row my-row">
-                <div class="col-3 my-col">
+                <!-- <div class="col-3 my-col">
                   <h3>content</h3>
-                </div>
+                </div> -->
 
-                <div class="col-9 my-col">
+                <div class="col-12 my-col">
                   <div class="row my-row">
                     <div class="col-2 my-col">
                       <b>Product ID</b>
@@ -435,12 +435,12 @@
                       <b>FIttings</b>
                     </div>
 
-                    <div class="col-5 my-col">
+                    <div class="col-4 my-col">
                       <input class="form-control mr-sm-2" type="text" placeholder="Fittings" aria-label="testname" id='fittings'>
                     </div>
 
                     <div class="col-2 my-col">
-                      <b>LAst inspection</b>
+                      <b>Last inspection</b>
                     </div>
 
                     <div class="col-4 my-col">
@@ -448,6 +448,7 @@
                     </div>
                   </div>
 
+<div class="row my-row">
                   <div class="col-2 my-col">
                       <b>Next Inspection</b>
                     </div>
@@ -455,7 +456,6 @@
                     <div class="col-4 my-col">
                       <input class="form-control mr-sm-2" type="text" placeholder="Website" aria-label="temprange" id='nextInspection'>
                     </div>
-                  </div>
 
                   <div class="col-2 my-col">
                       <b>Tested By</b>
@@ -464,8 +464,8 @@
                     <div class="col-4 my-col">
                       <input class="form-control mr-sm-2" type="text" placeholder="Profile Pic" aria-label="temprange" id='testedBy'>
                     </div>
-                  </div>
-
+</div>
+<div class="row my-row">
                   <div class="col-2 my-col">
                       <b>Hose Type</b>
                     </div>
@@ -473,7 +473,6 @@
                     <div class="col-4 my-col">
                       <input class="form-control mr-sm-2" type="text" placeholder="hose Type" aria-label="temprange" id='type'>
                     </div>
-                  </div>
 
                   <div class="col-2 my-col">
                       <b>Pressure</b>
@@ -482,8 +481,8 @@
                     <div class="col-4 my-col">
                       <input class="form-control mr-sm-2" type="text" placeholder="Pressure" aria-label="temprange" id='pressure'>
                     </div>
-                  </div>
-
+</div>
+<div class="row my-row">
                   <div class="col-2 my-col">
                       <b>Diameter</b>
                     </div>
@@ -491,7 +490,6 @@
                     <div class="col-4 my-col">
                       <input class="form-control mr-sm-2" type="text" placeholder="Diameter" aria-label="temprange" id='diameter'>
                     </div>
-                  </div>
 
                   <div class="col-2 my-col">
                       <b>Length</b>
@@ -500,8 +498,8 @@
                     <div class="col-4 my-col">
                       <input class="form-control mr-sm-2" type="text" placeholder="length" aria-label="temprange" id='length'>
                     </div>
-                  </div>
-
+</div>
+<div class="row my-row">
                   <div class="col-2 my-col">
                       <b>Temperature</b>
                     </div>
@@ -509,7 +507,6 @@
                     <div class="col-4 my-col">
                       <input class="form-control mr-sm-2" type="text" placeholder="tempeature" aria-label="temprange" id='temperature'>
                     </div>
-                  </div>
 
                   <div class="col-2 my-col">
                       <b>CRN or NON CRN</b>
@@ -518,16 +515,16 @@
                     <div class="col-4 my-col">
                       <input class="form-control mr-sm-2" type="text" placeholder="CRNORNOT" aria-label="temprange" id='crn'>
                     </div>
-                  </div>
-
+</div>
+<div class="row my-row">
                   <div class="col-2 my-col">
                       <b>In or Out of Service</b>
                     </div>
 
-                    <div class="col-4 my-col">
+                    <div class="col-10 my-col">
                       <input class="form-control mr-sm-2" type="text" placeholder="In or out" aria-label="temprange" id='inService'>
                     </div>
-                  </div>
+</div>
 
                     <!-- <div class="col-5 my-col">
                       <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
@@ -589,7 +586,7 @@
                     </div>
                   </div>
 
-                 
+
                   </div>
                 </div>
               </div>
