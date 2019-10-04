@@ -1,0 +1,73 @@
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1300px;
+    }
+}
+
+.my-container {
+  border: 1px solid green;
+}
+
+.my-row {
+  border: 3px solid red;
+}
+
+.my-col {
+  border: 3px dotted blue;
+}
+
+.dash-actions{
+  background-color: yellow;
+  height: 300px;
+}
+
+.sidebar {
+  background-color: yellow;
+  margin: none!important;
+  padding: none!important;
+  max-height: calc(100vh - 58px);
+  overflow: auto;
+}
+
+.filter-queries {
+}
+
+.table-container-vh {
+  min-height: calc(100vh - 50px);
+  background-color: GREY;
+}
+
+.details-table-container-vh {
+  min-height: calc(100vh - 112px);
+  background-color: grey;
+}
+
+.details-bar {
+  background-color: green;
+}
+
+.nav-sidebar a {
+  display: block!important;/* Make the links appear below each other */
+}
+
+/* Style the tab */
+.nav-panel {
+  float: right;
+  background-color: #343A40;
+  width: 56px;
+  min-height: calc(100vh - 50px);
+}
+
+/* Style the buttons that are used to open the tab content */
+.nav-panel button {
+  display: block!important;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+}
