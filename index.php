@@ -19,7 +19,9 @@
      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="javascript/bootstrap.bundle.min.js"></script>
 
-     <!-- <link href="css/styles.css" rel="stylesheet"> -->
+     <link href="css/styles.css" rel="stylesheet">
+
+     <script src="javascript/myjs.js"></script>
 
   </head>
 
