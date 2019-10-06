@@ -236,7 +236,6 @@
 
             <div class="modal-body">
               <div class="row my-row">
-
                 <div class="col-3 my-col">
                   <div class="picture-container">
                     <div class="picture">
@@ -276,21 +275,6 @@
                     </div>
                   </div>
 
-                  <!-- <div class="row my-row">
-                    <div class="col-2 my-col">
-                      <b>CRN:</b>
-                    </div>
-
-                    <div class="col-10 my-col">
-                      <select class="custom-select" id="inlineFormCustomSelect">
-                        <option selected>Choose one:</option>
-                        <option value="1">one</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                    </div>
-                  </div> -->
-
                   <div class="row my-row">
                     <div class="col-2 my-col">
                       <b>First Name</b>
@@ -327,30 +311,30 @@
                     </div>
                   </div>
 
-                  <div class="row my-row">
-                  <div class="col-2 my-col">
+                  <div class="row myrow">
+                    <div class="col-2 my-col">
                       <b>Website</b>
                     </div>
 
-                    <div class="col-10 my-col">
+                    <div class="col-4 my-col">
                       <input class="form-control mr-sm-2" type="text" placeholder="Website" aria-label="temprange" id='website'>
                     </div>
                   </div>
-
-                  <!-- </div> -->
+                </div>
 
                     <!-- <div class="col-5 my-col">
                       <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
                     </div> -->
                   </div>
                 </div>
-              </div>
+
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary">Add Another</button>
               <button type="button" class="btn btn-primary" ng-click='addCompany()'>Add</button>
             </div>
           </div>
         </div>
+      </div>
 
       <!-- Modal for Adding product -->
 
@@ -466,7 +450,8 @@
                     <div class="col-4 my-col">
                       <input class="form-control mr-sm-2" type="text" placeholder="Profile Pic" aria-label="temprange" id='testedBy'>
                     </div>
-                  </div>
+                    </div>
+
 <div class="row my-row">
                   <div class="col-2 my-col">
                       <b>Hose Type</b>
@@ -553,6 +538,7 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
+
             <div class="modal-body">
               <div class="row my-row">
                 <div class="col-3 my-col">
@@ -586,7 +572,7 @@
                     </div>
                   </div>
 
-<div class="row my-row">
+                  <div class="row my-row">
                     <div class="col-2 my-col">
                       <b>description</b>
                     </div>
@@ -596,10 +582,10 @@
                     </div>
                   </div>
 
-
                   </div>
                 </div>
               </div>
+
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary">Add Another</button>
               <button type="button" class="btn btn-primary" ng-click='addHose()'>Add</button>
