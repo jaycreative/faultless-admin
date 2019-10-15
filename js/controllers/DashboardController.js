@@ -1,4 +1,4 @@
-app.controller('DashboardController', function($scope, $http) {
+app.controller('DashboardController', function($scope, $http, transferService) {
   $scope.title= "This is the main screen of the App try this";
   $scope.next= "This is the next line";
   //$scope.id = 'D432223';
@@ -10,22 +10,69 @@ app.controller('DashboardController', function($scope, $http) {
     );  
   }
   
-  //
-  $scope.init = function(id1, id2, id3){
-    //$scope.id = id;
-    $http.post("functions/selectDash.php", {'id':id1}).then(function(response){  
+  $scope.init = function(){
+    transferService.setUsername("ID432223");
+    var name = transferService.getUsername();
+  
+    $http.post("functions/selectDash.php", {'name':name}).then(function(response){  
       $scope.names1 = response.data;
-     //alert($scope.names);
+     //alert($scope.names1);
     });
-    $http.post("functions/selectDash.php", {'id':id2}).then(function(response){  
+    $http.post("functions/selectDash2.php", {'name':name}).then(function(response){  
       $scope.names2 = response.data;
      //alert($scope.names);
     });
-    $http.post("functions/selectDash.php", {'id':id3}).then(function(response){  
+    $http.post("functions/selectDash3.php", {'name':name}).then(function(response){  
       $scope.names3 = response.data;
      //alert($scope.names);
     });
+    $http.post("functions/selectDash4.php").then(function(response){  
+      $scope.names4 = response.data;
+    // alert($scope.names1);
+    });
+    $http.post("functions/selectDash5.php").then(function(response){  
+      $scope.names5 = response.data;
+     //alert($scope.names);
+    });
+    $http.post("functions/selectDash6.php").then(function(response){  
+      $scope.names6 = response.data;
+     //alert($scope.names);
+    });
   };
+
+  $scope.goToProduct1 = function(index){
+     transferService.setProductID($scope.names1[index].ProductID);
+     transferService.setHoseType($scope.names1[index].HoseType);
+  }
+
+  $scope.goToProduct2 = function(index){
+    transferService.setProductID($scope.names2[index].ProductID);
+    transferService.setHoseType($scope.names2[index].HoseType);
+ }
+
+ $scope.goToProduct3 = function(index){
+  transferService.setProductID($scope.names3[index].ProductID);
+  transferService.setHoseType($scope.names3[index].HoseType);
+}
+
+$scope.goToProduct4 = function(index){
+  transferService.setProductID($scope.names4[index].ProductID);
+  transferService.setHoseType($scope.names4[index].HoseType);
+  transferService.setUsername($scope.names4[index].Username);
+}
+
+$scope.goToProduct5 = function(index){
+  transferService.setProductID($scope.names5[index].ProductID);
+  transferService.setHoseType($scope.names5[index].HoseType);
+  transferService.setUsername($scope.names5[index].Username);
+}
+
+$scope.goToProduct6 = function(index){
+  transferService.setProductID($scope.names6[index].ProductID);
+  transferService.setHoseType($scope.names6[index].HoseType);
+  transferService.setUsername($scope.names6[index].Username);
+}
+  //function names need to change (functions too)
 
   $scope.addCompany = function(){  
     var username = document.getElementById('username').value; //
@@ -35,10 +82,12 @@ app.controller('DashboardController', function($scope, $http) {
     var lastName = document.getElementById('lastName').value; //
     var email = document.getElementById('email').value; //
     var phoneNumber = document.getElementById('phoneNumber').value; //
+    var Ext = document.getElementById('Ext').value; //
+    var CompanyNumber = document.getElementById('CompanyNumber').value; //
     var website = document.getElementById('website').value; //
     var pic = document.getElementById('pic').value; //
     alert(firstName);
-    $http.post("functions/addCompany.php", {'username':username, 'companyName':companyName, 'location':location, 'firstName':firstName, 'lastName':lastName, 'email':email, 'phoneNumber':phoneNumber, 'website':website, 'pic':pic}).then(function(response){  
+    $http.post("functions/addCompany.php", {'username':username, 'companyName':companyName, 'location':location, 'firstName':firstName, 'lastName':lastName, 'email':email, 'phoneNumber':phoneNumber, 'Ext':Ext, 'CompanyNumber':CompanyNumber, 'website':website, 'pic':pic}).then(function(response){  
        alert('new Company Added!');   
        $scope.names = response.data;}
      );  
@@ -51,8 +100,7 @@ app.controller('DashboardController', function($scope, $http) {
     var orderNum = document.getElementById('orderNum').value;
     var part = document.getElementById('part').value; //
     var fittings = document.getElementById('fittings').value; //
-    var lastInspection = document.getElementById('lastInspection').value; //
-    var nextInspection = document.getElementById('nextInspection').value; //
+    var testDate = document.getElementById('testDate').value; //
     var testedBy = document.getElementById('testedBy').value; //
     var type = document.getElementById('type').value;  //
     var pressure = document.getElementById('pressure').value;
@@ -61,7 +109,7 @@ app.controller('DashboardController', function($scope, $http) {
     var temperature = document.getElementById('temperature').value; //
     var crn = document.getElementById('crn').value; //
     var inService = document.getElementById('inService').value; //
-    $http.post("functions/addProduct.php", {'productID':productID, 'PRusername':PRusername, 'customerPO':customerPO, 'orderNum':orderNum, 'part':part, 'fittings':fittings, 'lastInspection':lastInspection, 'nextInspection':nextInspection, 'testedBy':testedBy, 'type':type, 'pressure':pressure, 'diameter':diameter, 'length':length, 'temperature':temperature, 'crn':crn, 'inService':inService}).then(function(response){  
+    $http.post("functions/addProduct.php", {'productID':productID, 'PRusername':PRusername, 'customerPO':customerPO, 'orderNum':orderNum, 'part':part, 'fittings':fittings, 'testDate':testDate, 'testedBy':testedBy, 'type':type, 'pressure':pressure, 'diameter':diameter, 'length':length, 'temperature':temperature, 'crn':crn, 'inService':inService}).then(function(response){  
        alert(response.data);   
        $scope.names = response.data;}
      );  

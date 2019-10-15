@@ -23,7 +23,7 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-          <a class="nav-link" href="#/!">Dashboard<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#!dashboard">Dashboard<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="#!profile">Company Profile<span class="sr-only">(current)</span></a>
@@ -55,7 +55,7 @@
       <div class="container my-container mt-5">
         <div class="row">
           <div class="col-9 my-col">
-            <h1>Hose Type: HXR1</h1>
+            <h1>{{hoseType}} Hose products for Customer {{id}}</h1>
           </div>
             <div class="col-3 my-col">
             <button type="button" class="btn btn-light">toggle</button>
@@ -69,20 +69,26 @@
             <h3 class ="details">Details:</h3>
             <ul>
               <!-- We will insert the specific details here later -->
-              <li class="br-location">1426 Lynden RD, ON</li>
-              <li class="customer-po">#12345610</li>
-              <li class="crn">n/a</li>
-              <li class="lic-num">123456</li>
-              <li class="order-num">#123456</li>
-              <li class="hose-type">2XPR</li>
-              <li class="hose-p">30</li>
-              <li class="hose-r">10</li>
+              <li>{{productID}}</li>
+              <li>{{username}}</li>
+              <li>{{customerPO}}</li>
+              <li>{{orderNum}}</li>
+              <li>{{part}}</li>
+              <li>{{fittings}}</li>
+              <li>{{testDate}}</li>
+              <li>{{testedBy}}</li>
+              <li>{{pressure}}</li>
+              <li>{{diameter}}</li>
+              <li>{{length}}</li>
+              <li>{{temp}}</li>
+              <li>{{crn}}</li>
+              <li>{{inService}}</li>
             </ul>
-            <h3 class ="details">Testing:</h3>
+           <!-- <h3 class ="details">Testing:</h3> 
             <ul>
               <li class="tested by">Phil Robertson</li>
               <li class="dot">01/30/19</li>
-            </ul>
+            </ul> -->
           </div>
 
           <div class="col-6 my-col">
@@ -99,26 +105,28 @@
             <table class="table">
               <thead>
                 <tr>
-                            <th scope="col">Product ID</th>
-                            <th scope="col">Order Num</th>
-                            <th scope="col">Hose Type</th>
-                            <th scope="col">Hose Length</th>
-                            <th scope="col">Customer PO #</th>
-                            <th scope="col">Date of test</th>
+                  <th scope="col">Product ID</th>
+                  <th scope="col">Order Number</th>
+                  <th scope="col">Customer PO</th>
+                  <th scope="col">Part</th>
+                  <th scope="col">Tested By</th>
+                  <!-- <th scope="col">Date of test</th> -->
+                  <th scope="col">Checked</th>
                 </tr>
               </thead>
               <tbody>
-             <tr ng-repeat='a in names'>
+               <tr ng-repeat='a in names'>
 
-                <th scope="row">{{a.ProductID}}</th>
+                <th scope="row" id="{{$index}}" data-ng-click="details($index)">{{a.ProductID}}</th>
 
-
+                 
                   <td>{{a.OrderNum}}</td>
-                  <td>{{a.HoseType}}</td>
-                  <td>{{a.HoseLength}}</td>
                   <td>{{a.CustomerPO}}</td>
-                  <td>{{a.NextInspection}}</td>
-
+                  <td>{{a.Part}}</td>
+                  <td>{{a.TestedBy}}</td>
+                  <!-- <td>{{a.testDate}}</td> -->
+                  <td><input type="checkbox"></td>
+                  
                 </tr>
                 
               </tbody>
@@ -140,9 +148,16 @@
                 expands to produce more velocity and
                 higher pressure.
             </p> -->
+          
+            <div ng-repeat="x in listOfComments">
+              <h5>{{x.Comment}}</h5>
+              <h6>Date added: {{x.DateAdded}}</h6>
+            </div>
+            
+
             <h3 class ="comments">Comments</h3>
-            <input class="form-control mr-sm-2" type="text" placeholder="Comment..." aria-label="comment">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">send</button>
+            <input class="form-control mr-sm-2" type="text" placeholder="Comment..." aria-label="comment" id="Comment">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit" ng-click='addComment()'>send</button>
           </div>
         </div>
       </div>
@@ -161,24 +176,31 @@
             <div class="modal-body">
               <table class="table">
                 <thead>
-                  <tr>
-                    <th scope="col">Select</th>
-                    <th scope="col">Product ID</th>
-                  </tr>
+                <tr>
+                  <th scope="col">Product ID</th>
+                  <th scope="col">Order Number</th>
+                  <th scope="col">Customer PO</th>
+                  <th scope="col">Part</th>
+                  <th scope="col">Tested By</th>
+                  <!-- <th scope="col">Date of test</th> -->
+                  <th scope="col">Checked</th>
+                </tr>
+                
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row"><input type="checkbox" id="exampleCheck1"></th>
-                      <td>#PR019303</td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input type="checkbox" id="exampleCheck1"></th>
-                    <td>#PR920482</td>
-                  </tr>
-                  <tr>
-                    <th scope="row"><input type="checkbox" id="exampleCheck1"></th>
-                    <td>#PR284029</td>
-                  </tr>
+                <tr ng-repeat='a in names'>
+
+                  <th scope="row" id="{{$index}}" data-ng-click="details($index)">{{a.ProductID}}</th>
+
+                  
+                    <td>{{a.OrderNum}}</td>
+                    <td>{{a.CustomerPO}}</td>
+                    <td>{{a.Part}}</td>
+                    <td>{{a.TestedBy}}</td>
+                    <!-- <td>{{a.testDate}}</td> -->
+                    <td><input type="checkbox"></td>
+                  
+                </tr>
                 </tbody>
               </table>
             </div>
