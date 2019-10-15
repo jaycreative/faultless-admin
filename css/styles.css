@@ -4,20 +4,20 @@
     }
 }
 
-/* .my-container {
-  border: 1px solid green;
+.my-container {
+  /* border: 1px solid green; */
 }
 
 .my-row {
-  border: 3px solid red;
+  /* border: 3px solid red; */
 }
 
 .my-col {
-  border: 3px dotted blue;
-} */
+  /* border: 3px dotted blue; */
+}
 
 .dash-actions{
-  /* background-color: yellow; */
+  background-color: red;
   height: 300px;
 }
 
@@ -72,21 +72,26 @@
   transition: 0.3s;
 }
 
-/* input[type="text"],
+input[type="text"],
 select.form-control {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #000000;
+  height: 32px;
+  background: #E7E7E7;
+  border-radius: 4px;
   -webkit-box-shadow: none;
   box-shadow: none;
-  border-radius: 0;
 }
 
 input[type="text"]:focus,
 select.form-control:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
-} */
+}
+
+input[type="text"]:active,
+select.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 
 /*Profile Pic Start*/
 
@@ -96,8 +101,8 @@ select.form-control:focus {
 }
 .picture{
     width: 100%;
-    height: 150px;
-    background-color: #fdfdfd;
+    height: 175px;
+    background-color: #E7E7E7;
     border: 1px solid #CCCCCC;
     color: #FFFFFF;
     border-radius: 8px;
@@ -137,3 +142,44 @@ select.form-control:focus {
 
 }
 /*Profile Pic End*/
+
+.modal-content {
+}
+
+.modal-body .my-row {
+  padding-bottom:10px;
+  /* border: 3px solid red!important; */
+}
+
+.btn-primary {
+  background-color: #78A895;
+  border: none;
+  border-radius: 50px;
+  min-width: 100px;
+  box-shadow: 0px 3px 6px #00000029;
+}
+
+.btn-primary:hover {
+  border: none;
+  background-color: #78A895;
+  box-shadow: 0px 3px 6px #00000052;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle {
+  background-color: #668E7E;
+  border: none;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border: none;
+  border-radius: 50px;
+  min-width: 100px;
+  box-shadow: 0px 3px 6px #00000029;
+}
+
+.btn-secondary:hover {
+
+}

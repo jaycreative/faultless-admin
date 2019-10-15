@@ -224,7 +224,7 @@
 
       <!-- Modal for Adding Company -->
 
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade my-modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -316,7 +316,7 @@
                       <b>Website</b>
                     </div>
 
-                    <div class="col-4 my-col">
+                    <div class="col-10 my-col">
                       <input class="form-control mr-sm-2" type="text" placeholder="Website" aria-label="temprange" id='website'>
                     </div>
                   </div>
