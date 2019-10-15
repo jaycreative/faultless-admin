@@ -21,7 +21,7 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#/!">Dashboard<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#!dashboard">Dashboard<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="#!profile">Company Profile<span class="sr-only">(current)</span></a>
@@ -66,7 +66,7 @@
 
             <div class="row my-row">
               <div class="col-9 my-col">
-                <h1>Product Search</h1>
+                <h1>Company Search</h1>
               </div>
 
               <div class="col-3 my-col">
@@ -77,23 +77,23 @@
             <table class="table">
               <thead>
                <tr>
-                  <th scope="col">Product ID</th>
-                  <th scope="col">Order Number</th>
-                  <th scope="col">Hose Type</th>
-                  <th scope="col">Company Name</th>
-                  <th scope="col">Tested By</th>
-                  <th scope="col">Test Date</th>
+                  <th scope="col">Company name</th>
+                  <th scope="col">Company Location</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Website</th>
+                  <th scope="col">Contact Number</th>
                 </tr>
               </thead>
               <tbody>
 
                 <tr ng-repeat="a in names">
-                            <th scope="row" id="{{$index}}" data-ng-click="details($index)">{{a.ProductID}}</th>
-                            <td>{{a.OrderNum}}</td>
-                            <td>{{a.HoseType}}</td>
-                            <td>{{a.CompanyName}}</td>
-                            <td>{{a.TestedBy}}</td>
-                            <td>{{a.testDate}}</td>
+                            <th scope="row" id="{{$index}}" data-ng-click="details($index)">{{a.CompanyName}}</th>
+                            <td>{{a.Location}}</td>
+                            <td>{{a.LastName}}</td>
+                            <td>{{a.Email}}</td>
+                            <td>{{a.Website}}</td>
+                            <td>{{a.PersonalPhone}}</td>
                 </tr>
       
               </tbody>
@@ -109,21 +109,20 @@
                 <div class="tab-pane active text-style" id="tab1">
                   <h1> Details </h1>
                   <a href="#"><img src="https://via.placeholder.com/250"></a>
-                  <h3 class ="product-id">{{productID}}</h3>
+                  <h3 class ="product-id">{{CompanyName}}</h3>
                   <ul>
-                    <li>{{username}}</li>
-                    <li>{{customerPO}}</li>
-                    <li>{{orderNum}}</li>
-                    <li>{{part}}</li>
-                    <li>{{fittings}}</li>
-                    <li>{{testDate}}</li>
-                    <li>{{testedBy}}</li>
-                    <li>{{pressure}}</li>
-                    <li>{{diameter}}</li>
-                    <li>{{length}}</li>
-                    <li>{{temp}}</li>
-                    <li>{{crn}}</li>
-                    <li>{{inService}}</li>
+                    <li>{{Username}}</li>
+                    <li>{{Location}}</li>
+                    <li>{{FirstName}}</li>
+                    <li>{{LastName}}</li>
+                    <li>{{Email}}</li>
+                    <li>{{PersonalPhone}}</li>
+                    <li>{{Ext}}</li>
+                    <li>{{CompanyPhone}}</li>
+                    <li>{{NumberOfHoses}}</li>
+                    <li>{{Website}}</li>
+                    <li>{{DateJoined}}</li>
+                    <li><button type="button" class="btn btn-secondary"><a ng-href='#!profile'>To go profile</a></button></li>
  
                   </ul>
                 </div>
@@ -151,11 +150,11 @@
 
                     <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>CRN:</b>
+                      <b>Company Name</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="name" id="CRN">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="name" id="CompanyName">
                     </div>
                   </div>
 
@@ -171,51 +170,51 @@
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>Product ID:</b>
+                      <b>Location:</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="productid" id="ProductID">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="productid" id="Location">
                     </div>
                   </div>
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>Customer PO:</b>
+                      <b>First name:</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="customerpo" id="CustomerPO">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="customerpo" id="FirstName">
                     </div>
                   </div>
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>Order #:</b>
+                      <b>Last name:</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="ordernum" id="OrderNum">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="ordernum" id="LastName">
                     </div>
                   </div>
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>Date of test:</b>
+                      <b>Email</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="ordernum" id="testDate">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="ordernum" id="Email">
                     </div>
                   </div>
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>Hose Pressure:</b>
+                      <b>Personal Phone number:</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="ordernum" id="Pressure">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="ordernum" id="PersonalPhone">
                     </div>
 
                     <!-- <div class="col-8 my-col">
@@ -229,11 +228,11 @@
                   </div>
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>Temp. Range:</b>
+                      <b>Ext</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="ordernum" id="Temperature">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="ordernum" id="Ext">
                     </div>
 
                     <!-- <div class="col-8 my-col">
@@ -247,21 +246,21 @@
                   </div>
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>Tested By:</b>
+                      <b>Company Phone number:</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="tested" id="TestedBy">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="tested" id="CompanyPhone">
                     </div>
                   </div>
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>Hose Type:</b>
+                      <b># of Hoses</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="tested" id="HoseType">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="tested" id="NumberOfHoses">
                     </div>
                     <!-- <div class="col-8 my-col">
                       <select class="custom-select" id="inlineFormCustomSelect">
@@ -276,58 +275,28 @@
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>Hose Length:</b>
+                      <b>Website:</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="hoselength" id="HoseLength">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="hoselength" id="Website">
                     </div>
                   </div>
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>Order Diameter:</b>
+                      <b>Date Joined:</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="orderdia" id="HoseDiameter">
-                    </div>
-                  </div>
-
-                  <div class="row my-row">
-                    <div class="col-4 my-col">
-                      <b>Part:</b>
-                    </div>
-
-                    <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="orderdia" id="Part">
-                    </div>
-                  </div>
-
-                  <div class="row my-row">
-                    <div class="col-4 my-col">
-                      <b>Fittings:</b>
-                    </div>
-
-                    <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="orderdia" id="Fittings">
-                    </div>
-                  </div>
-
-                  <div class="row my-row">
-                    <div class="col-4 my-col">
-                      <b>In Service?:</b>
-                    </div>
-
-                    <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="orderdia" id="InService">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="orderdia" id="DateJoined">
                     </div>
                   </div>
 
                   <div class="row my-row">
 
                     <div class="col-8 my-col">
-                      <button type="button" class="btn btn-secondary" ng-click='searchProduct()'>Search</button>
+                      <button type="button" class="btn btn-secondary" ng-click='searchCompany()'>Search</button>
                     </div>
                   </div>
 

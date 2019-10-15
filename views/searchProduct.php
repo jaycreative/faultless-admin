@@ -21,7 +21,7 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#/!">Dashboard<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#!dashboard">Dashboard<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="#!profile">Company Profile<span class="sr-only">(current)</span></a>
@@ -94,6 +94,7 @@
                             <td>{{a.CompanyName}}</td>
                             <td>{{a.TestedBy}}</td>
                             <td>{{a.testDate}}</td>
+                           
                 </tr>
       
               </tbody>
@@ -114,6 +115,7 @@
                     <li>{{username}}</li>
                     <li>{{customerPO}}</li>
                     <li>{{orderNum}}</li>
+                    <li>{{hoseType}}</li>
                     <li>{{part}}</li>
                     <li>{{fittings}}</li>
                     <li>{{testDate}}</li>
@@ -124,6 +126,7 @@
                     <li>{{temp}}</li>
                     <li>{{crn}}</li>
                     <li>{{inService}}</li>
+                    <li><button type="button" class="btn btn-secondary"><a ng-href='#!product'>To go product screen</a></button></li>
  
                   </ul>
                 </div>
