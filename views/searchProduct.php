@@ -12,49 +12,11 @@
     </head>
 
   <body> -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Faultless Hoses</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#!dashboard">Dashboard<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#!profile">Company Profile<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#!product">Temp link to Product screen<span class="sr-only">(current)</span></a>
-        </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li> -->
-      </ul>
-
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
-
+  <div ng-init="init()"></div>
   <nav class="nav-panel">
     <ul class="nav tabs">
-      <li class="active" name="details" ng-click="name = 'details'">Details</li>
+      <li class="active" name="details" ng-click="name = 'deet'">Details</li>
       <li class="" name="filters" ng-click="name = 'filters'">Filters</li>
     </ul>
    </nav>
@@ -88,12 +50,14 @@
               <tbody>
 
                 <tr ng-repeat="a in names">
-                            <th scope="row" id="{{$index}}" data-ng-click="details($index)">{{a.ProductID}}</th>
+                            <th  scope="row" id="{{$index}}" ng-click="details($index)">{{a.ProductID}}</th>
                             <td>{{a.OrderNum}}</td>
                             <td>{{a.HoseType}}</td>
                             <td>{{a.CompanyName}}</td>
                             <td>{{a.TestedBy}}</td>
                             <td>{{a.testDate}}</td>
+                            <td><button type="button" class="btn btn-secondary" data-ng-click="nextScreen($index)">To go product</button></td>
+               
                            
                 </tr>
       
@@ -106,10 +70,10 @@
 
             <div ng-switch="name">
 
-              <div class="tab-pane active text-style" id="tab1" ng-switch-when="details">
+              <div class="tab-pane active text-style" id="tab1" ng-switch-when="deet">
                 <div class="tab-pane active text-style" id="tab1">
                   <h1> Details </h1>
-                  <a href="#"><img src="https://via.placeholder.com/250"></a>
+                  <a href="#"><img ng-src="{{img}}" src="https://via.placeholder.com/250"></a>
                   <h3 class ="product-id">{{productID}}</h3>
                   <ul>
                     <li>{{username}}</li>
@@ -126,13 +90,12 @@
                     <li>{{temp}}</li>
                     <li>{{crn}}</li>
                     <li>{{inService}}</li>
-                    <li><button type="button" class="btn btn-secondary"><a ng-href='#!product'>To go product screen</a></button></li>
- 
+                    
                   </ul>
                 </div>
               </div>
 
-              <div class="tab-pane text-style" id="tab2" ng-switch-when="filters">
+              <div class="tab-pane text-style" id="tab2" ng-switch-default="filters">
                 <h1>filters</h2>
                   <div class="filter-queries">
 
@@ -204,49 +167,66 @@
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>Date of test:</b>
+                      <b>Date Joined from:</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="ordernum" id="testDate">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="orderdia" id="fromDate">
                     </div>
+                    
                   </div>
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>Hose Pressure:</b>
+                      <b>Date Joined to:</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="ordernum" id="Pressure">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="orderdia" id="toDate">
                     </div>
-
-                    <!-- <div class="col-8 my-col">
-                      <select class="custom-select" id="inlineFormCustomSelect">
-                        <option selected>N/A</option>
-                        <option value="1">one</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                    </div> -->
+                    
                   </div>
+
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>Temp. Range:</b>
+                      <b>pressure from:</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="ordernum" id="Temperature">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="orderdia" id="fromPressure">
+                    </div>
+                    
+                  </div>
+
+                  <div class="row my-row">
+                    <div class="col-4 my-col">
+                      <b>pressure to:</b>
                     </div>
 
-                    <!-- <div class="col-8 my-col">
-                      <select class="custom-select" id="inlineFormCustomSelect">
-                        <option selected>N/A</option>
-                        <option value="1">one</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                    </div> -->
+                    <div class="col-8 my-col">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="orderdia" id="toPressure">
+                    </div>
+                    
+                    <div class="row my-row">
+                    <div class="col-4 my-col">
+                      <b>Temperature from:</b>
+                    </div>
+
+                    <div class="col-8 my-col">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="orderdia" id="fromTemp">
+                    </div>
+                    
+                  </div>
+
+                  <div class="row my-row">
+                    <div class="col-4 my-col">
+                      <b>Temperature to:</b>
+                    </div>
+
+                    <div class="col-8 my-col">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="orderdia" id="toTemp">
+                    </div>
+                    
                   </div>
                   <div class="row my-row">
                     <div class="col-4 my-col">
@@ -275,26 +255,48 @@
                       </select>
                     </div> -->
                     
+                    <div class="row my-row">
+                    <div class="col-4 my-col">
+                      <b>Length from:</b>
+                    </div>
+
+                    <div class="col-8 my-col">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="orderdia" id="fromLength">
+                    </div>
+                    
                   </div>
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>Hose Length:</b>
+                      <b>Length to:</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="hoselength" id="HoseLength">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="orderdia" id="toLength">
                     </div>
+                    
                   </div>
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>Order Diameter:</b>
+                      <b>Diameter from:</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="orderdia" id="HoseDiameter">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="orderdia" id="fromDiameter">
                     </div>
+                    
+                  </div>
+
+                  <div class="row my-row">
+                    <div class="col-4 my-col">
+                      <b>Diameter to:</b>
+                    </div>
+
+                    <div class="col-8 my-col">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="orderdia" id="toDiameter">
+                    </div>
+                    
                   </div>
 
                   <div class="row my-row">
@@ -330,7 +332,7 @@
                   <div class="row my-row">
 
                     <div class="col-8 my-col">
-                      <button type="button" class="btn btn-secondary" ng-click='searchProduct()'>Search</button>
+                      <button type="button" name="details" class="btn btn-secondary" ng-click="searchProduct()">Search</button>
                     </div>
                   </div>
 

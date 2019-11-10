@@ -10,40 +10,7 @@
     </head>
   <body> -->
   <div ng-init="init()"></div>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Faultless Hoses</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#!dashboard">Dashboard<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#!profile">Company Profile<span class="sr-only">(current)</span></a>
-        </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li> -->
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
+  
     <header id="header">
       <div class="container my-container mt-5">
         <div class="row">
@@ -71,7 +38,7 @@
             <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal3">Create</button>
           </div>
         </div>
-        <div class="row my-row">
+        <!-- <div class="row my-row">
           <div class="col-12 my-col">
               <div class="accordion" id="accordionExample">
                 <div class="card">
@@ -97,7 +64,7 @@
                         </thead>
                         <tbody>
                           <tr ng-repeat='a in names1'>
-                            <th scope="row" id="{{$index}}" data-ng-click="goToProduct1+($index)"><a ng-href='#!product'>{{a.ProductID}}</a></th>
+                            <th scope="row" id="{{$index}}" data-ng-click="goToProduct1($index)"><a ng-href='#!product'>{{a.ProductID}}</a></th>
                             <td>{{a.OrderNum}}</td>
                             <td>{{a.HoseType}}</td>
                             <td>{{a.CompanyName}}</td>
@@ -111,7 +78,7 @@
                 </div>
               </div>
           </div>
-        </div>
+        </div> -->
         <div class="row my-row">
           <div class="col-12 my-col">
             <div class="card">
@@ -159,7 +126,7 @@
               <div class="card-header" id="headingThree">
                 <h2 class="mb-0">
                   <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Collapsible Group Item #3
+                    Recently added Products
                   </button>
                 </h2>
               </div>
@@ -173,7 +140,7 @@
                             <th scope="col">Hose Type</th>
                             <th scope="col">Company Name</th>
                             <th scope="col">Tested By</th>
-                            <th scope="col">Date of test</th>
+                            <th scope="col">Date Added</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -183,7 +150,7 @@
                         <td>{{a.HoseType}}</td>
                         <td>{{a.CompanyName}}</td>
                         <td>{{a.TestedBy}}</td>
-                        <td>{{a.testDate}}</td>
+                        <td>{{a.creationDate}}</td>
                         </tr>
                         </tbody>
                   </table>
@@ -200,7 +167,7 @@
                   <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
                       <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      Recently Accessed
+                      Upcoming Inspections
                       </button>
                     </h2>
                   </div>
@@ -240,7 +207,7 @@
               <div class="card-header" id="headingTwo">
                 <h2 class="mb-0">
                       <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    Upcoming Inspections
+                    Recently created Profiles
                   </button>
                 </h2>
               </div>
@@ -249,23 +216,23 @@
                   <table class="table">
                           <thead>
                           <tr>
-                            <th scope="col">Product ID</th>
-                            <th scope="col">Order Number</th>
-                            <th scope="col">Hose Type</th>
                             <th scope="col">Company Name</th>
-                            <th scope="col">Tested By</th>
-                            <th scope="col">Date of test</th>
+                            <th scope="col">Company Location</th>
+                            <th scope="col">Date Joined</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Website</th>
+                            <th scope="col">Contact Number</th>
                           </tr>
                         </thead>
                         <tbody>
                         <tr ng-repeat='a in names5'>
 
-                        <th scope="row" id="{{$index}}" data-ng-click="goToProduct5($index)"><a ng-href='#!product'>{{a.ProductID}}</a></th>
-                            <td>{{a.OrderNum}}</td>
-                            <td>{{a.HoseType}}</td>
-                            <td>{{a.CompanyName}}</td>
-                            <td>{{a.TestedBy}}</td>
-                            <td>{{a.testDate}}</td>
+                        <th scope="row" id="{{$index}}" data-ng-click="goToProfile($index)"><a ng-href='#!profile'>{{a.CompanyName}}</a></th>
+                            <td>{{a.Location}}</td>
+                            <td>{{a.DateJoined}}</td>
+                            <td>{{a.Email}}</td>
+                            <td>{{a.Website}}</td>
+                            <td>{{a.PersonalPhone}}</td>
 
                         </tr>
                         </tbody>
@@ -281,7 +248,7 @@
               <div class="card-header" id="headingThree">
                 <h2 class="mb-0">
                   <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Collapsible Group Item #3
+                  Recently added Products
                   </button>
                 </h2>
               </div>
@@ -295,7 +262,7 @@
                             <th scope="col">Hose Type</th>
                             <th scope="col">Company Name</th>
                             <th scope="col">Tested By</th>
-                            <th scope="col">Date of test</th>
+                            <th scope="col">Date Added</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -305,7 +272,7 @@
                         <td>{{a.HoseType}}</td>
                         <td>{{a.CompanyName}}</td>
                         <td>{{a.TestedBy}}</td>
-                        <td>{{a.testDate}}</td>
+                        <td>{{a.creationDate}}</td>
                         </tr>
                         </tbody>
                   </table>
@@ -327,12 +294,16 @@
               </button>
             </div>
             <div class="modal-body">
+            <form name="companyForm" action="functions/updateCompanyPic.php" target="hoseFrame" method="POST" enctype="multipart/form-data">
               <div class="row my-row">
                 <div class="col-3 my-col">
                   <div class="picture-container">
                     <div class="picture">
                         <img src="https://lh3.googleusercontent.com/LfmMVU71g-HKXTCP_QWlDOemmWg4Dn1rJjxeEsZKMNaQprgunDTtEuzmcwUBgupKQVTuP0vczT9bH32ywaF7h68mF-osUSBAeM6MxyhvJhG6HKZMTYjgEv3WkWCfLB7czfODidNQPdja99HMb4qhCY1uFS8X0OQOVGeuhdHy8ln7eyr-6MnkCcy64wl6S_S6ep9j7aJIIopZ9wxk7Iqm-gFjmBtg6KJVkBD0IA6BnS-XlIVpbqL5LYi62elCrbDgiaD6Oe8uluucbYeL1i9kgr4c1b_NBSNe6zFwj7vrju4Zdbax-GPHmiuirf2h86eKdRl7A5h8PXGrCDNIYMID-J7_KuHKqaM-I7W5yI00QDpG9x5q5xOQMgCy1bbu3St1paqt9KHrvNS_SCx-QJgBTOIWW6T0DHVlvV_9YF5UZpN7aV5a79xvN1Gdrc7spvSs82v6gta8AJHCgzNSWQw5QUR8EN_-cTPF6S-vifLa2KtRdRAV7q-CQvhMrbBCaEYY73bQcPZFd9XE7HIbHXwXYA=s200-no" class="picture-src" id="wizardPicturePreview" title="">
-                        <input type="file" id="wizard-picture" class="">
+                        <input type="file" name="file2" id="file2" class="">
+                        <button type="button" class="btn btn-primary" ng-click='addCompany()'>Add</button>
+                        <button type="submit">Upload</button>
+                        <input type="reset" value="Reset">
                     </div>
                       <b class="">Choose Picture</b>
                   </div>
@@ -343,7 +314,7 @@
                       <b>Username</b>
                     </div>
                     <div class="col-10 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="crnnumber" id='username'>
+                      <input class="form-control mr-sm-2" type="text" placeholder="Username" name="Username" aria-label="crnnumber" id='username'>
                     </div>
                   </div>
                   <div class="row my-row">
@@ -351,13 +322,13 @@
                       <b>Company Name</b>
                     </div>
                     <div class="col-4 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Company Name" aria-label="licensenum" id='CompanyName'>
+                      <input class="form-control mr-sm-2" type="text" placeholder="Company Name" name="CompanyName" aria-label="licensenum" id='CompanyName'>
                     </div>
                     <div class="col-2 my-col">
                       <b>Location:</b>
                     </div>
                     <div class="col-4 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Location" aria-label="ordernum" id='location'>
+                      <input class="form-control mr-sm-2" type="text" placeholder="Location" name="Location" aria-label="ordernum" id='location'>
                     </div>
                   </div>
                   <div class="row my-row">
@@ -365,13 +336,13 @@
                       <b>First Name</b>
                     </div>
                     <div class="col-4 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="First Name" aria-label="hosepressure" id='firstName'>
+                      <input class="form-control mr-sm-2" type="text" placeholder="First Name" name="firstName" aria-label="hosepressure" id='firstName'>
                     </div>
                     <div class="col-2 my-col">
                       <b>Last Name</b>
                     </div>
                     <div class="col-4 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Last Name" aria-label="temprange" id='lastName'>
+                      <input class="form-control mr-sm-2" type="text" placeholder="Last Name" name="lastName" aria-label="temprange" id='lastName'>
                     </div>
                   </div>
                   <div class="row my-row">
@@ -379,27 +350,27 @@
                       <b>Email</b>
                     </div>
                     <div class="col-4 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Email" aria-label="testname" id='email'>
+                      <input class="form-control mr-sm-2" type="text" placeholder="Email" name="email" aria-label="testname" id='email'>
                     </div>
                     <div class="col-2 my-col">
                       <b>Phone number</b>
                     </div>
                     <div class="col-4 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Phone Number" aria-label="temprange" id='phoneNumber'>
+                      <input class="form-control mr-sm-2" type="text" placeholder="Phone Number" name="phone" aria-label="temprange" id='phoneNumber'>
                     </div>
                   </div>
                   <div class="col-2 my-col">
                       <b>Ext.</b>
                     </div>
                     <div class="col-4 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Extension" aria-label="temprange" id='Ext'>
+                      <input class="form-control mr-sm-2" type="number" placeholder="Extension" name="ext" aria-label="temprange" id='Ext'>
                     </div>
                   </div>
                   <div class="col-2 my-col">
                       <b>Company phone number</b>
                     </div>
                     <div class="col-4 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Cpmpany Phone Number" aria-label="temprange" id='CompanyNumber'>
+                      <input class="form-control mr-sm-2" type="text" placeholder="Cpmpany Phone Number" name="companyPhone" aria-label="temprange" id='CompanyNumber'>
                     </div>
                   </div>
                   <div class="row myrow">
@@ -407,15 +378,10 @@
                       <b>Website</b>
                     </div>
                     <div class="col-4 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Website" aria-label="temprange" id='website'>
+                      <input class="form-control mr-sm-2" type="text" placeholder="Website" name="website" aria-label="temprange" id='website'>
                     </div>
                   </div>
-                  <div class="col-2 my-col">
-                      <b>Profile Pic</b>
-                    </div>
-                    <div class="col-4 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Profile Pic" aria-label="temprange" id='pic'>
-                    </div>
+                 
                   </div>
                 </div>
                     <!-- <div class="col-5 my-col">
@@ -427,6 +393,7 @@
               <button type="button" class="btn btn-secondary">Add Another</button>
               <button type="button" class="btn btn-primary" ng-click='addCompany()'>Add</button>
             </div>
+            </form>
           </div>
         </div>
       </div>
@@ -440,6 +407,7 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
+            <form>
             <div class="modal-body">
               <div class="row my-row">
                 <!-- <div class="col-3 my-col">
@@ -576,8 +544,10 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary">Add Another</button>
               <button type="button" class="btn btn-primary" ng-click='addProduct()'>Add</button>
+              <input type="reset" value="Reset">
             </div>
           </div>
+          </form>
         </div>
       </div>
       <!-- Modal for Adding new Hose Type -->
@@ -591,12 +561,20 @@
               </button>
             </div>
             <div class="modal-body">
+            <form name="hoseForm" action="functions/upload.php" target="hoseFrame" method="POST" enctype="multipart/form-data">
+                        
               <div class="row my-row">
                 <div class="col-3 my-col">
                   <div class="picture-container">
                     <div class="picture">
                         <img src="https://lh3.googleusercontent.com/LfmMVU71g-HKXTCP_QWlDOemmWg4Dn1rJjxeEsZKMNaQprgunDTtEuzmcwUBgupKQVTuP0vczT9bH32ywaF7h68mF-osUSBAeM6MxyhvJhG6HKZMTYjgEv3WkWCfLB7czfODidNQPdja99HMb4qhCY1uFS8X0OQOVGeuhdHy8ln7eyr-6MnkCcy64wl6S_S6ep9j7aJIIopZ9wxk7Iqm-gFjmBtg6KJVkBD0IA6BnS-XlIVpbqL5LYi62elCrbDgiaD6Oe8uluucbYeL1i9kgr4c1b_NBSNe6zFwj7vrju4Zdbax-GPHmiuirf2h86eKdRl7A5h8PXGrCDNIYMID-J7_KuHKqaM-I7W5yI00QDpG9x5q5xOQMgCy1bbu3St1paqt9KHrvNS_SCx-QJgBTOIWW6T0DHVlvV_9YF5UZpN7aV5a79xvN1Gdrc7spvSs82v6gta8AJHCgzNSWQw5QUR8EN_-cTPF6S-vifLa2KtRdRAV7q-CQvhMrbBCaEYY73bQcPZFd9XE7HIbHXwXYA=s200-no" class="picture-src" id="wizardPicturePreview" title="">
-                        <input type="file" id="wizard-picture" class="">
+                        <!-- <form action="/functions/upload.php" target="_blank" method="POST" enctype="multipart/form-data"> -->
+                        <input type="file" name="file1" id="file1" class="">
+                        <button type="submit">Upload</button>
+                        <button type="button" class="btn btn-primary" ng-click='addHose()'>Add</button>
+                        <input type="reset" value="Reset">
+                        <!-- </form> -->
+                        
                     </div>
                       <b class="">Choose Picture</b>
                   </div>
@@ -607,35 +585,79 @@
                       <b>Hose type</b>
                     </div>
                     <div class="col-10 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="newHose" aria-label="crnnumber" id='newHose'>
+                      <input class="form-control mr-sm-2" name="hoseType" type="text" placeholder="newHose" aria-label="crnnumber" id='newHose'>
                     </div>
                   </div>
-                  <div class="row my-row">
-                    <div class="col-2 my-col">
-                      <b>url</b>
-                    </div>
-                    <div class="col-10 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="url" aria-label="licensenum" id='url'>
-                    </div>
-                  </div>
+          
                   <div class="row my-row">
                     <div class="col-2 my-col">
                       <b>description</b>
                     </div>
                     <div class="col-10 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="description" aria-label="ordernum" id='description'>
+                      <input class="form-control mr-sm-2" name="description" type="text" placeholder="description" aria-label="ordernum" id='description'>
                     </div>
                   </div>
                   </div>
                 </div>
               </div>
+            
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary">Add Another</button>
-              <button type="button" class="btn btn-primary" ng-click='addHose()'>Add</button>
+              <!-- <button type="button" class="btn btn-secondary">Add Another</button> -->
+              <!-- <button type="button" class="btn btn-primary" ng-click='addHose()'>Add</button> -->
+              <!-- <button type="submit" name="submit" ng-click="addHose()">ADD</button> -->
+                       
             </div>
+            </form>
           </div>
         </div>
       </div>
+
+      <iframe name="hoseFrame" style="display:none"></iframe>
+
+  <!--  add php opening tag   
+  
+if(isset($_POST['submit'])){
+    $file = $_FILES['file'];
+    echo($file);
+   //print_r($file);
+    $fileName = $_FILES['file']['name'];
+    $fileTmpName = $_FILES['file']['tmp_name'];
+    $fileSize = $_FILES['file']['size'];
+    $fileError = $_FILES['file']['error'];
+   // $fileType = $_FILES['file']['type'];
+
+    $fileExt = explode('.', $fileName);
+    $fileActualExt = strtolower(end($fileExt));
+    // print_r($file);
+    $allowed = array('jpg', 'jpeg', 'png');
+
+    if(in_array($fileActualExt, $allowed)) {
+        if($fileError === 0) {
+                if($fileSize < 1000000) {
+                    $fileNameNew = uniqid('', true).".".$fileActualExt;
+                    $img = $fileNameNew;
+                    
+                    $fileDestination = 'uploads/'.$fileNameNew;
+                    move_uploaded_file($fileTmpName, $fileDestination);
+                   // header("Location: index.php?uploadsuccess");
+                } else {
+                    echo "Your file is too big!";
+                }
+        } else {
+            echo "There was an error uploading your file!";
+        }
+
+    } else {
+        echo "You cannot upload files of this type!";
+    }
+//}
+
+
+?> -->
+
+
+
+
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
       <script src="javascript/bootstrap.bundle.min.js"></script>
   <!-- </body>

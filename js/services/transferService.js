@@ -30,7 +30,12 @@ var getHoseType = function(){
 
 var login = function() {
   loggedin = true;
-  alert("logged in!");
+  //alert("logged in!");
+};
+
+var signOut = function() {
+  loggedin = false;
+ // alert("logged in!");
 };
 
 var isloggedin = function(){
@@ -46,6 +51,7 @@ var isloggedin = function(){
     setHoseType: setHoseType,
     getHoseType: getHoseType,
     login:login,
+    signOut:signOut,
     isloggedin:isloggedin
   };
 

@@ -7,8 +7,10 @@
 
 // $idd = mysqli_real_escape_string($connect, 'ID432223');
 
+//select recently created Profiles
+
  $output = array();  
- $query = "SELECT * FROM product as P INNER JOIN company as C ON P.Username = C.Username ORDER BY TestedBy ASC";  
+ $query = "SELECT * FROM company ORDER BY DateJoined DESC";  
  //fix this into a join
  //$query = "SELECT * FROM product";  
  $result = mysqli_query($connect, $query);  

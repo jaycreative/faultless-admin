@@ -12,45 +12,6 @@
     </head>
 
   <body> -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Faultless Hoses</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#!dashboard">Dashboard<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#!profile">Company Profile<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#!product">Temp link to Product screen<span class="sr-only">(current)</span></a>
-        </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li> -->
-      </ul>
-
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
 
   <nav class="nav-panel">
     <ul class="nav tabs">
@@ -81,19 +42,21 @@
                   <th scope="col">Company Location</th>
                   <th scope="col">Name</th>
                   <th scope="col">Email</th>
-                  <th scope="col">Website</th>
+                  <!-- <th scope="col">Website</th> -->
                   <th scope="col">Contact Number</th>
+                  <th scope="col">Profile link</th>
                 </tr>
               </thead>
               <tbody>
 
                 <tr ng-repeat="a in names">
-                            <th scope="row" id="{{$index}}" data-ng-click="details($index)">{{a.CompanyName}}</th>
+                            <th scope="row" id="{{$index}}" data-ng-click="details($index)" >{{a.CompanyName}}</th>
                             <td>{{a.Location}}</td>
-                            <td>{{a.LastName}}</td>
+                            <td>{{a.LastName}}, {{a.FirstName}}</td>
                             <td>{{a.Email}}</td>
-                            <td>{{a.Website}}</td>
+                            <!-- <td>{{a.Website}}</td> -->
                             <td>{{a.PersonalPhone}}</td>
+                            <td><button type="button" class="btn btn-secondary" data-ng-click="nextScreen($index)">To go profile</button></td>
                 </tr>
       
               </tbody>
@@ -108,7 +71,7 @@
               <div class="tab-pane active text-style" id="tab1" ng-switch-when="details">
                 <div class="tab-pane active text-style" id="tab1">
                   <h1> Details </h1>
-                  <a href="#"><img src="https://via.placeholder.com/250"></a>
+                  <a href="#"><img ng-src="{{img}}" src="https://via.placeholder.com/250"></a>
                   <h3 class ="product-id">{{CompanyName}}</h3>
                   <ul>
                     <li>{{Username}}</li>
@@ -122,13 +85,12 @@
                     <li>{{NumberOfHoses}}</li>
                     <li>{{Website}}</li>
                     <li>{{DateJoined}}</li>
-                    <li><button type="button" class="btn btn-secondary"><a ng-href='#!profile'>To go profile</a></button></li>
- 
+                    
                   </ul>
                 </div>
               </div>
 
-              <div class="tab-pane text-style" id="tab2" ng-switch-when="filters">
+              <div class="tab-pane text-style" id="tab2" ng-switch-default="filters">
                 <h1>filters</h2>
                   <div class="filter-queries">
 
@@ -285,12 +247,24 @@
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>Date Joined:</b>
+                      <b>Date Joined from:</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="orderdia" id="DateJoined">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="orderdia" id="fromDate">
                     </div>
+                    
+                  </div>
+
+                  <div class="row my-row">
+                    <div class="col-4 my-col">
+                      <b>Date Joined to:</b>
+                    </div>
+
+                    <div class="col-8 my-col">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="orderdia" id="toDate">
+                    </div>
+                    
                   </div>
 
                   <div class="row my-row">

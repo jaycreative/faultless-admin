@@ -8,7 +8,7 @@
 // $idd = mysqli_real_escape_string($connect, 'ID432223');
 
  $output = array();  
- $query = "SELECT * FROM product as P INNER JOIN company as C ON P.Username = C.Username ORDER BY ProductID DESC";  
+ $query = "SELECT * FROM product as P INNER JOIN company as C ON P.Username = C.Username ORDER BY creationDate DESC";  
  //fix this into a join
  //$query = "SELECT * FROM product";  
  $result = mysqli_query($connect, $query);  

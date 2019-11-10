@@ -18,24 +18,52 @@ app.config(function ($routeProvider) {
         controller: "DashboardController" 
       })
       .when('/product', { 
+        resolve: {
+          check: function($location, transferService) {
+            if(!transferService.isloggedin()) {
+              $location.path('/');
+            }
+          },
+        },
         templateUrl: 'views/product.php',
         controller: "ProductController"
       })
       .when('/searchProduct', { 
+        resolve: {
+          check: function($location, transferService) {
+            if(!transferService.isloggedin()) {
+              $location.path('/');
+            }
+          },
+        },
         templateUrl: 'views/searchProduct.php',
         controller: "searchProductController"
       })
       .when('/searchCompany', { 
+        resolve: {
+          check: function($location, transferService) {
+            if(!transferService.isloggedin()) {
+              $location.path('/');
+            }
+          },
+        },
         templateUrl: 'views/searchCompany.php',
         controller: "searchCompanyController"
       })
       .when('/profile', { 
+        resolve: {
+          check: function($location, transferService) {
+            if(!transferService.isloggedin()) {
+              $location.path('/');
+            }
+          },
+        },
         templateUrl: 'views/profile.php',
         controller: "ProfileController"
       })
-      .otherwise({
-          redirectTo: "/"
-      });
+      // .otherwise({
+      //     redirectTo: "/"
+      // });
  
   });
 
