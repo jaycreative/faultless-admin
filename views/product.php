@@ -32,20 +32,22 @@
             <h3 class ="details">Details:</h3>
             <ul>
               <!-- We will insert the specific details here later -->
-              <li>{{productID}}</li>
-              <li>{{username}}</li>
-              <li>{{customerPO}}</li>
-              <li>{{orderNum}}</li>
-              <li>{{part}}</li>
-              <li>{{fittings}}</li>
-              <li>{{testDate}}</li>
-              <li>{{testedBy}}</li>
-              <li>{{pressure}}</li>
-              <li>{{diameter}}</li>
-              <li>{{length}}</li>
-              <li>{{temp}}</li>
-              <li>{{crn}}</li>
-              <li>{{inService}}</li>
+              <li>Product ID: {{productID}}</li>
+              <li>Username: {{username}}</li>
+              <li>Customer PO: {{customerPO}}</li>
+              <li>Order num: {{orderNum}}</li>
+              <li>Part: {{part}}</li>
+              <li>Fittings: {{fittings}}</li>
+              <li>Diameter: {{diameter}}</li>
+              <li>Length: {{length}}</li>
+              <li>Pressure: {{pressure}}</li>
+              <li>Temperature: {{temp}}</li>
+              <li>CRN? {{crn}}</li>
+              <li>Hose status: {{inService}}</li>
+              <li>Last test Date: {{testDate}}</li>
+              <li>Tester: {{testedBy}}</li>
+
+
               <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit info</button></li>
             </ul>
            <!-- <h3 class ="details">Testing:</h3> 
@@ -70,11 +72,12 @@
               <thead>
                 <tr>
                   <th scope="col">Product ID</th>
-                  <th scope="col">Order Number</th>
                   <th scope="col">Customer PO</th>
-                  <th scope="col">Part</th>
+                  <th scope="col">Order Number</th>
+                  <th scope="col">CRN?</th>
                   <th scope="col">Tested By</th>
-                  <!-- <th scope="col">Date of test</th> -->
+                  <th scope="col">Test date</th>
+                  <th scope="col">Hose status</th>
                   <th scope="col">Checked</th>
                 </tr>
               </thead>
@@ -85,11 +88,14 @@
                 <th scope="row" id="{{$index}}" data-ng-click="details($index)">{{a.ProductID}}</th>
 
                  
-                  <td>{{a.OrderNum}}</td>
+                 
                   <td>{{a.CustomerPO}}</td>
-                  <td>{{a.Part}}</td>
+                  <td>{{a.OrderNum}}</td>
+                  <td>{{a.CRN}}</td>
                   <td>{{a.TestedBy}}</td>
-                  <!-- <td>{{a.testDate}}</td> -->
+                <!--  <td>{{a.testDate}}</td> -->
+                 <!-- <td>{{a.InService}}</td> -->
+
                   <td><input type="checkbox" name="checkboxes"></td>
                   
                 </tr>

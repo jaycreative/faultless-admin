@@ -39,11 +39,11 @@
               <thead>
                <tr>
                   <th scope="col">Company name</th>
-                  <th scope="col">Company location</th>
+                  <th scope="col">Location</th>
+                  <th scope="col">Username</th>
                   <th scope="col">Name</th>
                   <th scope="col">Email</th>
-                  <!-- <th scope="col">Website</th> -->
-                  <th scope="col">Contact number</th>
+                  <th scope="col">Date joined</th>
                   <th scope="col">Profile link</th>
                 </tr>
               </thead>
@@ -52,11 +52,10 @@
                 <tr ng-repeat="a in names">
                             <th scope="row" id="{{$index}}" data-ng-click="details($index)" >{{a.CompanyName}}</th>
                             <td>{{a.Location}}</td>
+                            <td>{{a.Username}}</td>
                             <td>{{a.LastName}}, {{a.FirstName}}</td>
                             <td>{{a.Email}}</td>
-                            <!-- should be included -->
-                            <!-- <td>{{a.Website}}</td> -->
-                            <td>{{a.PersonalPhone}}</td>
+                            <td>{{a.DateJoined}}</td>
                             <td><button type="button" class="btn btn-secondary" data-ng-click="nextScreen($index)">To go profile</button></td>
                 </tr>
       
@@ -73,19 +72,18 @@
                 <div class="tab-pane active text-style" id="tab1">
                   <h1>Details</h1>
                   <img ng-src="{{img}}" src="https://via.placeholder.com/250">
-                  <h3 class ="product-id">{{CompanyName}}</h3>
+                  <h3 class ="product-id">Company name: {{CompanyName}}</h3>
                   <ul>
-                    <li>{{Username}}</li>
-                    <li>{{Location}}</li>
-                    <li>{{FirstName}}</li>
-                    <li>{{LastName}}</li>
-                    <li>{{Email}}</li>
-                    <li>{{PersonalPhone}}</li>
-                    <li>{{Ext}}</li>
-                    <li>{{CompanyPhone}}</li>
-                    <li>{{NumberOfHoses}}</li>
-                    <li>{{Website}}</li>
-                    <li>{{DateJoined}}</li>
+                    <li>Username: {{Username}}</li>
+                    <li>Location: {{Location}}</li>
+                    <li>Company contact: {{CompanyPhone}}</li>
+                    <li>Website: {{Website}}</li>
+                    <li>First name: {{FirstName}}</li>
+                    <li>Last name: {{LastName}}</li>
+                    <li>Mobile contact: {{PersonalPhone}}</li>
+                    <li>Ext. {{Ext}}</li>
+                    <li>Email: {{Email}}</li>
+                    <li>Member since: {{DateJoined}}</li>
                     
                   </ul>
                 </div>
@@ -143,6 +141,31 @@
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
+                      <b>Company Phone number:</b>
+                    </div>
+
+                    <div class="col-8 my-col">
+                      <input class="form-control mr-sm-2" type="text" maxlength="13" placeholder="(###)###-####" aria-label="tested" id="CompanyPhone">
+                    </div>
+                  </div>
+
+          
+
+                  <div class="row my-row">
+                    <div class="col-4 my-col">
+                      <b>Website</b>
+                    </div>
+
+                    <div class="col-8 my-col">
+                      <input class="form-control mr-sm-2" type="text" maxlength="50" placeholder="Ex. www.faultless.com" aria-label="hoselength" id="Website">
+                    </div>
+                  </div>
+
+
+                  <!------------------------------------------------------------------------------------------------------>
+
+                  <div class="row my-row">
+                    <div class="col-4 my-col">
                       <b>First name</b>
                     </div>
 
@@ -158,16 +181,6 @@
 
                     <div class="col-8 my-col">
                       <input class="form-control mr-sm-2" type="text" maxlength="50" aria-label="ordernum" id="LastName">
-                    </div>
-                  </div>
-
-                  <div class="row my-row">
-                    <div class="col-4 my-col">
-                      <b>Email</b>
-                    </div>
-
-                    <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" maxlength="50" placeholder="Ex. 123@email.com" aria-label="ordernum" id="Email">
                     </div>
                   </div>
 
@@ -198,6 +211,18 @@
                       <input class="form-control mr-sm-2" type="text" maxlength="5" placeholder="#####" aria-label="ordernum" id="Ext">
                     </div>
 
+
+                  <div class="row my-row">
+                    <div class="col-4 my-col">
+                      <b>Email</b>
+                    </div>
+
+                    <div class="col-8 my-col">
+                      <input class="form-control mr-sm-2" type="text" maxlength="50" placeholder="Ex. 123@email.com" aria-label="ordernum" id="Email">
+                    </div>
+                  </div>
+
+
                     <!-- <div class="col-8 my-col">
                       <select class="custom-select" id="inlineFormCustomSelect">
                         <option selected>N/A</option>
@@ -207,27 +232,7 @@
                       </select>
                     </div> -->
                   </div>
-                  <div class="row my-row">
-                    <div class="col-4 my-col">
-                      <b>Company Phone number:</b>
-                    </div>
-
-                    <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" maxlength="13" placeholder="(###)###-####" aria-label="tested" id="CompanyPhone">
-                    </div>
-                  </div>
-
-          
-
-                  <div class="row my-row">
-                    <div class="col-4 my-col">
-                      <b>Website</b>
-                    </div>
-
-                    <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" maxlength="50" placeholder="Ex. www.faultless.com" aria-label="hoselength" id="Website">
-                    </div>
-                  </div>
+ 
 
                   <div class="row my-row">
                     <div class="col-4 my-col">

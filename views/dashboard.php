@@ -20,12 +20,14 @@
         </div>
         <div class="row my-row">
           <div class="col-4 my-col dash-actions">
+            <p> Find a Product by ID</p>
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
           </div>
           <div class="col-4 my-col dash-actions">
             <p> Find a Product Page</p>
-            <a href="#!searchProduct"><button>Search for a product</button></a>
+            <a href="#!searchProduct"><button>Search</button></a>
             <p> Find a Company Page</p>
-            <a href="#!searchCompany"><button>Search for a company</button></a>
+            <a href="#!searchCompany"><button>Search</button></a>
           </div>
           <div class="col-4 my-col dash-actions">
             <p>Add new Company</p>
@@ -93,23 +95,26 @@
                           <thead>
                           <tr>
                             <th scope="col">Product ID</th>
+                            <th scope="col">Customer PO</th>
                             <th scope="col">Order Number</th>
                             <th scope="col">Hose Type</th>
-                            <th scope="col">Company Name</th>
+                            <th scope="col">CRN?</th>
                             <th scope="col">Tested By</th>
-                            <th scope="col">Date of test</th>
+                            <th scope="col">Test date</th>
+                            <th scope="col">Hose Status</th>
                           </tr>
                         </thead>
                         <tbody>
                         <tr ng-repeat='a in names2'>
 
                         <th scope="row" id="{{$index}}" data-ng-click="goToProduct2($index)"><a ng-href='#!product'>{{a.ProductID}}</a></th>
+                            <td>{{a.CustomerPO}}</td>
                             <td>{{a.OrderNum}}</td>
                             <td>{{a.HoseType}}</td>
-                            <td>{{a.CompanyName}}</td>
+                            <td>{{a.CRN}}</td>
                             <td>{{a.TestedBy}}</td>
                             <td>{{a.testDate}}</td>
-
+                            <td>{{a.InService}}</td>
                         </tr>
                         </tbody>
                   </table>
@@ -134,21 +139,25 @@
                         <thead>
                             <tr>
                           <th scope="col">Product ID</th>
+                          <th scope="col">Customer PO</th>
                             <th scope="col">Order Number</th>
                             <th scope="col">Hose Type</th>
-                            <th scope="col">Company Name</th>
+                            <th scope="col">CRN?</th>
                             <th scope="col">Tested By</th>
                             <th scope="col">Date Added</th>
+                            <th scope="col">Hose Status</th>
                           </tr>
                         </thead>
                         <tbody>
                         <tr ng-repeat='a in names3'>
                         <th scope="row" id="{{$index}}" data-ng-click="goToProduct3($index)"><a ng-href='#!product'>{{a.ProductID}}</a></th>
+                        <td>{{a.CustomerPO}}</td>
                         <td>{{a.OrderNum}}</td>
                         <td>{{a.HoseType}}</td>
-                        <td>{{a.CompanyName}}</td>
+                        <td>{{a.CRN}}</td>
                         <td>{{a.TestedBy}}</td>
                         <td>{{a.creationDate}}</td>
+                        <td>{{a.InService}}</td>
                         </tr>
                         </tbody>
                   </table>
@@ -175,21 +184,27 @@
                         <thead>
                           <tr>
                             <th scope="col">Product ID</th>
+                            <th scope="col">Customer PO</th>
                             <th scope="col">Order Number</th>
-                            <th scope="col">Hose Type</th>
                             <th scope="col">Company Name</th>
+                            <th scope="col">Hose Type</th>
+                            <th scope="col">CRN?</th>
                             <th scope="col">Tested By</th>
                             <th scope="col">Date of test</th>
+                            <th scope="col">Hose Status</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr ng-repeat='a in names4'>
                           <th scope="row" id="{{$index}}" data-ng-click="goToProduct4($index)"><a ng-href='#!product'>{{a.ProductID}}</a></th>
+                          <td>{{a.CustomerPO}}</td>
                             <td>{{a.OrderNum}}</td>
-                            <td>{{a.HoseType}}</td>
                             <td>{{a.CompanyName}}</td>
+                            <td>{{a.HoseType}}</td>
+                            <td>{{a.CRN}}</td>
                             <td>{{a.TestedBy}}</td>
                             <td>{{a.testDate}}</td>
+                            <td>{{a.InService}}</td>
                           </tr>
                         </tbody>
                       </table>
@@ -214,23 +229,29 @@
                   <table class="table">
                           <thead>
                           <tr>
-                            <th scope="col">Company Name</th>
-                            <th scope="col">Company Location</th>
-                            <th scope="col">Date Joined</th>
+                          <th scope="col">Username</th>
+                            <th scope="col">Company name</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Website</th>
-                            <th scope="col">Contact Number</th>
+                            <th scope="col">Mobile contact</th>
+                            <th scope="col">Date Joined</th>
+                
                           </tr>
                         </thead>
                         <tbody>
                         <tr ng-repeat='a in names5'>
 
-                        <th scope="row" id="{{$index}}" data-ng-click="goToProfile($index)"><a ng-href='#!profile'>{{a.CompanyName}}</a></th>
+                        <th scope="row" id="{{$index}}" data-ng-click="goToProfile($index)"><a ng-href='#!profile'>{{a.Username}}</a></th>
+                        <td>{{a.CompanyName}}</td>
                             <td>{{a.Location}}</td>
-                            <td>{{a.DateJoined}}</td>
+                            <td>{{a.LastName}}, {{a.FirstName}}</td>
                             <td>{{a.Email}}</td>
                             <td>{{a.Website}}</td>
                             <td>{{a.PersonalPhone}}</td>
+                            <td>{{a.DateJoined}}</td>
+                         
 
                         </tr>
                         </tbody>
@@ -255,22 +276,28 @@
                   <table class="table">
                         <thead>
                             <tr>
-                          <th scope="col">Product ID</th>
+                            <th scope="col">Product ID</th>
+                            <th scope="col">Customer PO</th>
                             <th scope="col">Order Number</th>
-                            <th scope="col">Hose Type</th>
                             <th scope="col">Company Name</th>
+                            <th scope="col">Hose Type</th>
+                            <th scope="col">CRN?</th>
                             <th scope="col">Tested By</th>
-                            <th scope="col">Date Added</th>
+                            <th scope="col">Date of test</th>
+                            <th scope="col">Hose Status</th>
                           </tr>
                         </thead>
                         <tbody>
                         <tr ng-repeat='a in names6'>
                         <th scope="row" id="{{$index}}" data-ng-click="goToProduct6($index)"><a ng-href='#!product'>{{a.ProductID}}</a></th>
-                        <td>{{a.OrderNum}}</td>
-                        <td>{{a.HoseType}}</td>
-                        <td>{{a.CompanyName}}</td>
-                        <td>{{a.TestedBy}}</td>
-                        <td>{{a.creationDate}}</td>
+                        <td>{{a.CustomerPO}}</td>
+                            <td>{{a.OrderNum}}</td>
+                            <td>{{a.CompanyName}}</td>
+                            <td>{{a.HoseType}}</td>
+                            <td>{{a.CRN}}</td>
+                            <td>{{a.TestedBy}}</td>
+                            <td>{{a.testDate}}</td>
+                            <td>{{a.InService}}</td>
                         </tr>
                         </tbody>
                   </table>
@@ -299,10 +326,11 @@
                     <div class="picture">
                         <img src="https://lh3.googleusercontent.com/LfmMVU71g-HKXTCP_QWlDOemmWg4Dn1rJjxeEsZKMNaQprgunDTtEuzmcwUBgupKQVTuP0vczT9bH32ywaF7h68mF-osUSBAeM6MxyhvJhG6HKZMTYjgEv3WkWCfLB7czfODidNQPdja99HMb4qhCY1uFS8X0OQOVGeuhdHy8ln7eyr-6MnkCcy64wl6S_S6ep9j7aJIIopZ9wxk7Iqm-gFjmBtg6KJVkBD0IA6BnS-XlIVpbqL5LYi62elCrbDgiaD6Oe8uluucbYeL1i9kgr4c1b_NBSNe6zFwj7vrju4Zdbax-GPHmiuirf2h86eKdRl7A5h8PXGrCDNIYMID-J7_KuHKqaM-I7W5yI00QDpG9x5q5xOQMgCy1bbu3St1paqt9KHrvNS_SCx-QJgBTOIWW6T0DHVlvV_9YF5UZpN7aV5a79xvN1Gdrc7spvSs82v6gta8AJHCgzNSWQw5QUR8EN_-cTPF6S-vifLa2KtRdRAV7q-CQvhMrbBCaEYY73bQcPZFd9XE7HIbHXwXYA=s200-no" class="picture-src" id="wizardPicturePreview" title="">
                         <input type="file" name="file2" id="file2" class="">
-                        <button type="button" class="btn btn-primary" ng-click='addCompany()'>Add Company</button>
+                        <button type="button" class="btn btn-primary" ng-click='addCompany()'>Add</button>
+                        <button type="submit">Upload</button>
                         <input type="reset" value="Clear fields">
                     </div>
-                     
+                      <b class="">Choose Picture</b>
                   </div>
                 </div>
                 <div class="col-9 my-col">
@@ -387,6 +415,8 @@
                   </div>
                 </div>
             <div class="modal-footer">
+              <button type="button" class="btn btn-secondary">Add Another</button>
+              <button type="button" class="btn btn-primary" ng-click='addCompany()'>Add company</button>
             </div>
             </form>
           </div>
@@ -551,7 +581,8 @@
                 </div>
               </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary" ng-click='addProduct()'>Add product</button>
+              <button type="button" class="btn btn-secondary">Add Another</button>
+              <button type="button" class="btn btn-primary" ng-click='addProduct()'>Add hose</button>
               <input type="reset" value="Clear fields">
             </div>
           </div>
@@ -584,7 +615,7 @@
                         <!-- </form> -->
                         
                     </div>
-                    
+                      <b class="">Choose Picture</b>
                   </div>
                 </div>
                 <div class="col-9 my-col">
