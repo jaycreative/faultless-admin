@@ -1,6 +1,7 @@
 app.controller('DashboardController', function($scope, $http, transferService) {
   $scope.title= "This is the main screen of the App try this";
   $scope.next= "This is the next line";
+  
   document.getElementById("navigation").style.visibility = 'visible';
   var hoseCount = 0;
   var newHoseCount = 0;
@@ -20,6 +21,7 @@ app.controller('DashboardController', function($scope, $http, transferService) {
   $scope.init = function(){
     transferService.setUsername("ID432223");
     var name = transferService.getUsername();
+    $scope.getHoses();
 
       $http.post("functions/hoseCount.php").then(function(response){  
         hoseCount = parseInt(response.data[0].H, 10);
@@ -138,8 +140,52 @@ $scope.goToProduct6 = function(index){
   var allowed = ['jpg', 'jpeg', 'png'];
   var img = "";
 
+   var phonePattern = new RegExp(document.getElementById("phoneNumber").getAttribute("pattern"));
+   var emailPattern = new RegExp(document.getElementById("email").getAttribute("pattern"));
+   //var re = new RegExp(pattern);
+   
 
   //var fileType = document.getElementById("file1").files[0].type;
+  alert("working");
+
+  //check if Ext is a number of 5 digits
+  if(Ext > 99999 || Ext < 0 || isNaN(Ext)){
+    if(!Ext == ""){
+    alert("Ext must contain only digits (0-99999)");
+    return;
+    }
+  }
+
+  //check if phone number matches pattern
+   if(CompanyNumber != ""){
+     if(!phonePattern.test(CompanyNumber)){
+       alert("Company Phone number is invalid.  Please enter a valid Company phone number");
+       return;
+     }
+   }
+
+    //check if email matches pattern
+    if(email != ""){
+      if(!emailPattern.test(email)){
+        alert("Email is invalid.  Please enter a valid email address");
+        return;
+      }
+    }
+
+     //check if company phone number matches pattern
+     if(phoneNumber != ""){
+      if(!phonePattern.test(phoneNumber)){
+        alert("Phone number is invalid.  Please enter a valid personal phone number");
+        return;
+      }
+    }
+
+  // if(CompanyNumber != ""){
+  //   if(!re.test(CompanyNumber)){
+  //     alert("Company phone number is invalid.  Please enter a valid Company phone number");
+  //   }
+  // }
+
 
 
   //checking to see if file is provided or not
@@ -271,6 +317,13 @@ $scope.goToProduct6 = function(index){
   
      }
 
+     $scope.getHoses = function(){
+      $http.post("functions/getHoses.php").then(function(response){  
+        $scope.hoses = response.data;
+        alert(response.data);
+      }); 
+     }
+
     
       //alert("Hose count is " + hoseCount + 1);
       //alert("New hose count is " + newHoseCount); 
@@ -300,8 +353,57 @@ $scope.goToProduct6 = function(index){
     var diameter = document.getElementById('diameter').value; //
     var length = document.getElementById('length').value; //
     var temperature = document.getElementById('temperature').value; //
-    var crn = document.getElementById('crn').value; //
-    var inService = document.getElementById('inService').value; //
+
+    var x = document.getElementsByName('crn');
+    var y = document.getElementsByName('status');
+
+ 
+
+    for(i = 0; i < x.length; i++) { 
+      if(x[i].checked) {
+        var crn = x[i].value; 
+      }
+    } 
+
+    for(j = 0; j < y.length; j++) { 
+      if(y[j].checked) {
+        var inService = y[j].value; 
+      }
+    } 
+
+    alert(productID + " " + PRusername + " " + customerPO + " " + orderNum + " " + part + " " + fittings + " " + testDate + " " + testedBy + " " +  type + " " + pressure + " " + diameter + " " + length + " " + temperature + ' ' + crn + " " + inService)
+
+     if(productID=="" || PRusername=="" || customerPO=="" || orderNum=="" || part=="" || fittings=="" || testDate=="" || testedBy=="na" || type=="na" || pressure=="" || diameter=="" || length=="" || temperature=="" || crn==null || inService==null){
+       alert("All fields are required.  Please fill all fields and submit again");
+       return;
+     }
+
+    if(temperature > 500 || temperature <-500 || isNaN(temperature)){
+      alert("temperature must have a value of -500 to 500 degrees fahrenheit");
+      return;
+    }
+
+    if(pressure > 99999 || pressure < 0 || isNaN(pressure)){
+      alert("pressure must have a value of 0 to 99999 PSI");
+      return;
+    }
+
+    if(diameter > 99 || diameter < 0 || isNaN(diameter)){
+      alert("diameter must have a value of 0 to 99 inches");
+      return;
+    }
+
+    if(length > 999 || length < 0 || isNaN(length)){
+      alert("length must have a value of 0 to 999 feet");
+      return;
+    }
+
+
+    // var crn = document.getElementById('crn').value; //
+    // var inService = document.getElementById('inService').value; //
+   // alert(crn + "    " + inService);
+
+    //alert(testedBy + " " + type);
 
     //make sure given Username is in database and that product ID isnt in database
     $http.post("functions/selectCompany.php", {'username':PRusername}).then(function(response){  
@@ -310,6 +412,19 @@ $scope.goToProduct6 = function(index){
           alert("Username must exist. Please check again and re-enter correct Username");
           return;
         } else {
+
+
+
+          if(testedBy == "na"){
+            alert("Please select a tester");
+            return;
+          }
+
+          if(type == "na"){
+            alert("Please select a hose type");
+            return;
+          }
+
           alert("USername exists, please proceed");
           $http.post("functions/selectProduct.php", {'productID':productID}).then(function(response){  
               var y = response.data.toString();

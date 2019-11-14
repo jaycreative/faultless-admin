@@ -33,7 +33,6 @@ app.controller('searchCompanyController', function($scope, $http, $location, tra
      var PersonalPhone = "%".concat(document.getElementById('PersonalPhone').value, "%"); 
      var Ext = "%".concat(document.getElementById('Ext').value, "%"); 
      var CompanyPhone = "%".concat(document.getElementById('CompanyPhone').value, "%"); 
-     var NumberOfHoses = "%".concat(document.getElementById('NumberOfHoses').value, "%"); 
      var Website = "%".concat(document.getElementById('Website').value, "%"); 
 
      
@@ -51,14 +50,14 @@ app.controller('searchCompanyController', function($scope, $http, $location, tra
     if (PersonalPhone == ""){PersonalPhone = "%"};
     if (Ext == ""){Ext = "%"};
     if (CompanyPhone == ""){CompanyPhone = "%"};
-    if (NumberOfHoses == ""){NumberOfHoses = "%"};
+    //if (NumberOfHoses == ""){NumberOfHoses = "%"};
     if (Website == ""){Website = "%"};
     if (fromDate == ""){fromDate = "%"};
     if (toDate == ""){toDate = "%"};
 
    // alert(toDate);
 
-     $http.post("functions/searchCompany.php", {'CompanyName':CompanyName, 'Username':Username, 'Location':Location, 'FirstName':FirstName, 'LastName':LastName, 'Email':Email, 'PersonalPhone':PersonalPhone, 'Ext':Ext, 'CompanyPhone':CompanyPhone, 'NumberOfHoses':NumberOfHoses, 'Website':Website, 'fromDate':fromDate, 'toDate':toDate}).then(function(response){  
+     $http.post("functions/searchCompany.php", {'CompanyName':CompanyName, 'Username':Username, 'Location':Location, 'FirstName':FirstName, 'LastName':LastName, 'Email':Email, 'PersonalPhone':PersonalPhone, 'Ext':Ext, 'CompanyPhone':CompanyPhone, 'Website':Website, 'fromDate':fromDate, 'toDate':toDate}).then(function(response){  
          
         $scope.names = response.data;
         if($scope.names == "null"){

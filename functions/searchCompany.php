@@ -21,7 +21,7 @@
 
      // $query = "SELECT * FROM product WHERE ProductID LIKE '$ProductID' AND Username LIKE '$Username' AND CustomerPO LIKE '$CustomerPO' AND OrderNum LIKE '$OrderNum' AND Part LIKE '$Part' AND Fittings LIKE '$Fittings' AND testDate LIKE '$TestDate' AND TestedBy LIKE '$TestedBy' AND HoseType LIKE '$HoseType' AND Pressure LIKE '$Pressure' AND HoseDiameter LIKE '$HoseDiameter' AND HoseLength LIKE '$HoseLength' AND Temperature LIKE '$Temperature' AND CRN LIKE '$CRN' AND InService LIKE '$InService' ";  
      //$query = "SELECT * FROM product WHERE ProductID LIKE '$ProductID' AND Username LIKE '$Username' AND CustomerPO LIKE '$CustomerPO' AND OrderNum LIKE '$OrderNum' AND Part LIKE '$Part' AND Fittings LIKE '$Fittings' AND testDate LIKE '$testDate' AND TestedBy LIKE '$TestedBy' AND HoseType LIKE '$HoseType' AND Pressure LIKE '$Pressure' AND HoseDiameter LIKE '$HoseDiameter' AND HoseLength LIKE '$HoseLength' AND Temperature LIKE '$Temperature' AND CRN LIKE '$CRN' AND InService LIKE '$InService' ";
-     $sql = "SELECT * FROM company WHERE CompanyName LIKE ? AND Username LIKE ? AND Location LIKE ? AND FirstName LIKE ? AND LastName LIKE ? AND Email LIKE ? AND PersonalPhone LIKE ? AND Ext LIKE ? AND CompanyPhone LIKE ? AND NumberOfHoses LIKE ? AND Website LIKE ? AND DateJoined >= ? AND DateJoined <= ? ORDER BY DateJoined DESC ";
+     $sql = "SELECT * FROM company WHERE CompanyName LIKE ? AND Username LIKE ? AND Location LIKE ? AND FirstName LIKE ? AND LastName LIKE ? AND Email LIKE ? AND PersonalPhone LIKE ? AND Ext LIKE ? AND CompanyPhone LIKE ? AND Website LIKE ? AND DateJoined >= ? AND DateJoined <= ? ORDER BY DateJoined DESC ";
 
     //  $result = mysqli_query($connect, $query);  
 
@@ -38,7 +38,7 @@
             if(!mysqli_stmt_prepare($stmt, $sql)){
                     echo "SQL statement failed!";
             } else {
-                    mysqli_stmt_bind_param($stmt, "sssssssssssss", $CompanyName, $Username, $Location, $FirstName, $LastName, $Email, $PersonalPhone, $Ext, $CompanyPhone, $NumberOfHoses, $Website, $fromDate, $toDate);
+                    mysqli_stmt_bind_param($stmt, "ssssssssssss", $CompanyName, $Username, $Location, $FirstName, $LastName, $Email, $PersonalPhone, $Ext, $CompanyPhone, $Website, $fromDate, $toDate);
                     mysqli_stmt_execute($stmt);
                     $result = mysqli_stmt_get_result($stmt);
                     

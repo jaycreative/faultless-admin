@@ -31,7 +31,7 @@
               </div>
 
               <div class="col-3 my-col">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
               </div>
             </div>
 
@@ -39,11 +39,11 @@
               <thead>
                <tr>
                   <th scope="col">Company name</th>
-                  <th scope="col">Company Location</th>
+                  <th scope="col">Company location</th>
                   <th scope="col">Name</th>
                   <th scope="col">Email</th>
                   <!-- <th scope="col">Website</th> -->
-                  <th scope="col">Contact Number</th>
+                  <th scope="col">Contact number</th>
                   <th scope="col">Profile link</th>
                 </tr>
               </thead>
@@ -54,6 +54,7 @@
                             <td>{{a.Location}}</td>
                             <td>{{a.LastName}}, {{a.FirstName}}</td>
                             <td>{{a.Email}}</td>
+                            <!-- should be included -->
                             <!-- <td>{{a.Website}}</td> -->
                             <td>{{a.PersonalPhone}}</td>
                             <td><button type="button" class="btn btn-secondary" data-ng-click="nextScreen($index)">To go profile</button></td>
@@ -70,8 +71,8 @@
 
               <div class="tab-pane active text-style" id="tab1" ng-switch-when="details">
                 <div class="tab-pane active text-style" id="tab1">
-                  <h1> Details </h1>
-                  <a href="#"><img ng-src="{{img}}" src="https://via.placeholder.com/250"></a>
+                  <h1>Details</h1>
+                  <img ng-src="{{img}}" src="https://via.placeholder.com/250">
                   <h3 class ="product-id">{{CompanyName}}</h3>
                   <ul>
                     <li>{{Username}}</li>
@@ -91,7 +92,7 @@
               </div>
 
               <div class="tab-pane text-style" id="tab2" ng-switch-default="filters">
-                <h1>filters</h2>
+                <h1>Filters</h2>
                   <div class="filter-queries">
 
                   
@@ -112,51 +113,51 @@
 
                     <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>Company Name</b>
+                      <b>Company name</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="name" id="CompanyName">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Ex. Faultless Hoses" maxlength="50" aria-label="name" id="CompanyName">
                     </div>
                   </div>
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>UserName:</b>
+                      <b>Username</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="name" id="Username">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Ex. ID12345" maxlength="50" aria-label="name" id="Username">
                     </div>
                   </div>
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>Location:</b>
+                      <b>Location</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="productid" id="Location">
+                      <input class="form-control mr-sm-2" type="text" maxlength="50" placeholder="Ex. 123 Faultless Cres." aria-label="productid" id="Location">
                     </div>
                   </div>
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>First name:</b>
+                      <b>First name</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="customerpo" id="FirstName">
+                      <input class="form-control mr-sm-2" type="text" maxlength="50" aria-label="customerpo" id="FirstName">
                     </div>
                   </div>
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>Last name:</b>
+                      <b>Last name</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="ordernum" id="LastName">
+                      <input class="form-control mr-sm-2" type="text" maxlength="50" aria-label="ordernum" id="LastName">
                     </div>
                   </div>
 
@@ -166,17 +167,17 @@
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="ordernum" id="Email">
+                      <input class="form-control mr-sm-2" type="text" maxlength="50" placeholder="Ex. 123@email.com" aria-label="ordernum" id="Email">
                     </div>
                   </div>
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>Personal Phone number:</b>
+                      <b>Personal phone number</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="ordernum" id="PersonalPhone">
+                      <input class="form-control mr-sm-2" type="text" maxlength="13" placeholder="(###)###-####" aria-label="ordernum" id="PersonalPhone">
                     </div>
 
                     <!-- <div class="col-8 my-col">
@@ -194,7 +195,7 @@
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="ordernum" id="Ext">
+                      <input class="form-control mr-sm-2" type="text" maxlength="5" placeholder="#####" aria-label="ordernum" id="Ext">
                     </div>
 
                     <!-- <div class="col-8 my-col">
@@ -212,57 +213,40 @@
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="tested" id="CompanyPhone">
+                      <input class="form-control mr-sm-2" type="text" maxlength="13" placeholder="(###)###-####" aria-label="tested" id="CompanyPhone">
+                    </div>
+                  </div>
+
+          
+
+                  <div class="row my-row">
+                    <div class="col-4 my-col">
+                      <b>Website</b>
+                    </div>
+
+                    <div class="col-8 my-col">
+                      <input class="form-control mr-sm-2" type="text" maxlength="50" placeholder="Ex. www.faultless.com" aria-label="hoselength" id="Website">
                     </div>
                   </div>
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b># of Hoses</b>
+                      <b>Date joined from</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="tested" id="NumberOfHoses">
-                    </div>
-                    <!-- <div class="col-8 my-col">
-                      <select class="custom-select" id="inlineFormCustomSelect">
-                        <option selected>N/A</option>
-                        <option value="1">one</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                    </div> -->
-                    
-                  </div>
-
-                  <div class="row my-row">
-                    <div class="col-4 my-col">
-                      <b>Website:</b>
-                    </div>
-
-                    <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="hoselength" id="Website">
-                    </div>
-                  </div>
-
-                  <div class="row my-row">
-                    <div class="col-4 my-col">
-                      <b>Date Joined from:</b>
-                    </div>
-
-                    <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="orderdia" id="fromDate">
+                      <input class="form-control mr-sm-2" type="date" placeholder="Enter terms to search for" aria-label="orderdia" id="fromDate">
                     </div>
                     
                   </div>
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>Date Joined to:</b>
+                      <b>Date joined to</b>
                     </div>
 
                     <div class="col-8 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Enter terms to search for" aria-label="orderdia" id="toDate">
+                      <input class="form-control mr-sm-2" type="date" placeholder="Enter terms to search for" aria-label="orderdia" id="toDate">
                     </div>
                     
                   </div>

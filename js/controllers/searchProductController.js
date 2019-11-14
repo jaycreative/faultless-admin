@@ -10,7 +10,8 @@ app.controller('searchProductController', function($scope, $http, $location, tra
     //var element = document.getElementById("goToProduct");
     // document.getElementById("goToProduct").style.visibility = hidden;
     //element.hidden = true;
-    $scope.hideButton="true";
+    //$scope.hideButton="true";
+    $scope.getHoses();
     //document.getElementById("hideLink").style.display = "none";
     //var x = document.getElementById("hideLink");
    // alert(x);
@@ -62,8 +63,11 @@ app.controller('searchProductController', function($scope, $http, $location, tra
     // var HoseDiameter = "%".concat(document.getElementById('HoseDiameter').value, "%"); 
     // var HoseLength = "%".concat(document.getElementById('HoseLength').value, "%"); 
     // var Temperature = "%".concat(document.getElementById('Temperature').value, "%"); 
-     var CRN = "%".concat(document.getElementById('CRN').value, "%"); 
-     var InService = "%".concat(document.getElementById('InService').value, "%"); 
+   //  var CRN = "%".concat(document.getElementById('CRN').value, "%"); 
+    // var InService = "%".concat(document.getElementById('InService').value, "%"); 
+
+     if (TestedBy == "%na%"){TestedBy = "%"};
+     if (HoseType == "%na%"){HoseType = "%"};
 
      
 
@@ -107,8 +111,29 @@ app.controller('searchProductController', function($scope, $http, $location, tra
    // if (HoseDiameter == ""){HoseDiameter = "%"};
    // if (HoseLength == ""){HoseLength = "%"};
    // if (Temperature == ""){Temperature = "%"};
-    if (CRN == ""){CRN = "%"};
-    if (InService == ""){InService = "%"};
+ 
+
+    
+
+    var x = document.getElementsByName('crn');
+    var y = document.getElementsByName('status');
+
+    for(i = 0; i < x.length; i++) { 
+      if(x[i].checked) {
+        var CRN = x[i].value; 
+      }
+    } 
+
+    for(j = 0; j < y.length; j++) { 
+      if(y[j].checked) {
+        var InService = y[j].value; 
+      }
+    } 
+
+    if (CRN == null){CRN = "%"};
+    if (InService == null){InService = "%"};
+
+    alert(TestedBy + " " + HoseType + " " + fromDate + " " + toDate + " "+ CRN + " " + InService);
 
    // alert("UE");
 
@@ -191,6 +216,13 @@ app.controller('searchProductController', function($scope, $http, $location, tra
   $scope.myFunction = function() {
     
   }
+
+  $scope.getHoses = function(){
+    $http.post("functions/getHoses.php").then(function(response){  
+      $scope.hoses = response.data;
+      alert(response.data);
+    }); 
+   }
 
 });
 

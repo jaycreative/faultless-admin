@@ -10,6 +10,8 @@
       $Ext = mysqli_real_escape_string($connect, $data->Ext); 
       $Email = mysqli_real_escape_string($connect, $data->Email);      
       $id = mysqli_real_escape_string($connect, $data->id);      
+
+      if($Ext == ""){$Ext = "0";};
  
            $sql = "UPDATE company SET FirstName = ?, LastName = ?, PersonalPhone = ?, Ext = ?, Email = ? WHERE Username = '$id'";  
           //  if(mysqli_query($connect, $query))  

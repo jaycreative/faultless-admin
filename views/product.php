@@ -19,17 +19,16 @@
       <div class="container my-container mt-5">
         <div class="row">
           <div class="col-9 my-col">
-            <h1>{{hoseType}} Hose products for Customer {{id}}</h1>
+            <h1>{{hoseType}} hose products for customer {{id}}</h1>
           </div>
             <div class="col-3 my-col">
-            <button type="button" class="btn btn-light">toggle</button>
             <button type="button" ng-click="generate()">Generate Certificate</button>
           </div>
         </div>
 
         <div class="row details-table-container-vh">
           <div class="col-3 my-col details-bar">
-            <a href="#"><img  ng-src="{{img}}" src="https://via.placeholder.com/250"></a>
+            <img  ng-src="{{img}}" src="https://via.placeholder.com/250">
             <h3 class ="details">Details:</h3>
             <ul>
               <!-- We will insert the specific details here later -->
@@ -59,11 +58,11 @@
           <div class="col-6 my-col">
             <div class="row my-row">
               <div class="col-9 my-col">
-                <h3>Purchase history</h3>
+                <!-- <h3>Purchase history</h3> -->
               </div>
 
               <div class="col-3 my-col">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
               </div>
             </div>
 
@@ -148,23 +147,29 @@
                       <b>Customer PO</b>
                     </div>
                     <div class="col-10 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="crnnumber" id='PO' value="{{customerPO}}">
+                      <input class="form-control mr-sm-2" type="text" maxlength="50" placeholder="Ex. 12345" aria-label="crnnumber" id='PO' value="{{customerPO}}">
                     </div>
                 </div>
                 <div class="row my-row">
                     <div class="col-2 my-col">
-                      <b>New Test Date</b>
+                      <b>New test date</b>
                     </div>
                     <div class="col-10 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="crnnumber" id='testDate' value="{{testDate}}">
+                      <input class="form-control mr-sm-2" type="date" placeholder="Username" aria-label="crnnumber" id='testDate' value="{{testDate}}">
                     </div>
                 </div>
                 <div class="row my-row">
                     <div class="col-2 my-col">
-                      <b>Tested By</b>
+                      <b>Tested by</b>
                     </div>
                     <div class="col-10 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="crnnumber" id='Tester' value="{{testedBy}}">
+                      <select class="form-control mr-sm-2" placeholder="Username" aria-label="crnnumber" id='Tester' value="{{testedBy}}">
+                      <option value="na">Select tester</option>
+                      <option value="Brian Williams">Brian Williams</option>
+                      <option value="Bruce Williams">Bruce Williams</option>
+                      <option value="Derek Williams">Derek Williams</option>
+                      <!-- NEed to get other values -->
+                      </select>
                     </div>
                 </div>
                 <div class="row my-row">
@@ -172,7 +177,8 @@
                       <b>In Service?</b>
                     </div>
                     <div class="col-10 my-col">
-                      <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="crnnumber" id='inService' value="{{inService}}">
+                    <input class="form-control mr-sm-2" type="radio" aria-label="temprange" name="status" id='statusYes' value="1" required>In Service<br>
+                    <input class="form-control mr-sm-2" type="radio" aria-label="temprange" name="status" id='statusNo' value="0" required>Out of Service<br>
                     </div>
                 </div>
 

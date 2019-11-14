@@ -151,7 +151,35 @@ app.controller('ProductController', function($scope, $http, transferService) {
     var PO = document.getElementById('PO').value;
     var testDate = document.getElementById('testDate').value;
     var tester = document.getElementById('Tester').value;
-    var inService = document.getElementById('inService').value;
+    //var inService = document.getElementById('inService').value;
+
+    if(PO == ""){
+      alert("Please enter a valid PO number");
+      return;
+    }
+
+    if(testDate == ""){
+      alert("Please enter a valid test date");
+      return;
+    }
+
+    if(tester == "na"){
+      alert("Please select a tester");
+      return;
+    }
+
+    var y = document.getElementsByName('status');
+
+    for(j = 0; j < y.length; j++) { 
+      if(y[j].checked) {
+        var inService = y[j].value; 
+      }
+    }
+
+    if(inService == null){
+      alert("Select a status for the hose");
+      return;
+    }
 
     $http.post("functions/updateProduct.php", {'ProductID':ProductID, 'PO':PO, 'testDate':testDate, 'tester':tester, 'inService':inService}).then(function(response){  
      

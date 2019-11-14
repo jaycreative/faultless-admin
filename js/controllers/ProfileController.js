@@ -42,6 +42,33 @@ app.controller('ProfileController', function($scope, $http, $location, transferS
     var Ext = document.getElementById('Ext').value;
     var Email = document.getElementById('Email').value;
 
+    var phonePattern = new RegExp(document.getElementById("PersonalPhone").getAttribute("pattern"));
+    var emailPattern = new RegExp(document.getElementById("Email").getAttribute("pattern"));
+
+      //check if Ext is a number of 5 digits
+  if(Ext > 99999 || Ext < 0 || isNaN(Ext)){
+    if(!Ext == ""){
+    alert("Ext must contain only digits (0-99999)");
+    return;
+    }
+  }
+
+  //check if phone number matches pattern
+   if(PersonalPhone != ""){
+     if(!phonePattern.test(PersonalPhone)){
+       alert("Mobile phone number is invalid.  Please enter a valid phone number");
+       return;
+     }
+   }
+
+    //check if email matches pattern
+    if(Email != ""){
+      if(!emailPattern.test(Email)){
+        alert("Email is invalid.  Please enter a valid email address");
+        return;
+      }
+    }
+
 
     $http.post("functions/UpdatePersonal.php", {'id':transferService.getUsername(), 'FirstName':FirstName, 'LastName':LastName, 'PersonalPhone':PersonalPhone, 'Ext':Ext, 'Email':Email}).then(function(response){  
       $scope.names = response.data;
@@ -101,6 +128,16 @@ app.controller('ProfileController', function($scope, $http, $location, transferS
     var Website = document.getElementById('Website').value;
     var DateJoined = document.getElementById('DateJoined').value;
 
+    var phonePattern = new RegExp(document.getElementById("CompanyPhone").getAttribute("pattern"));
+
+      //check if phone number matches pattern
+   if(CompanyPhone != ""){
+    if(!phonePattern.test(CompanyPhone)){
+      alert("Company Phone number is invalid.  Please enter a valid Company phone number");
+      return;
+    }
+  }
+
     $http.post("functions/updateCompany.php", {'Username':username, 'CompanyName':CompanyName, 'Location':Location, 'CompanyPhone':CompanyPhone, 'Website':Website, 'DateJoined':DateJoined}).then(function(response){  
       $scope.names = response.data;
       alert("Company information section has been updated!");
@@ -143,7 +180,7 @@ app.controller('ProfileController', function($scope, $http, $location, transferS
     var newpw = document.getElementById('newpw').value;
     var newpw2 = document.getElementById('newpw2').value;
 
-    if (newpw.length == 0 || newpw2.length == 0 || pw.length == 0){
+    if (newpw == "" || newpw2 == "" || pw.length == ""){
       alert("Password fields cannot be blank. Please fill in all password fields");
       return;
     }
@@ -162,18 +199,22 @@ app.controller('ProfileController', function($scope, $http, $location, transferS
      
       //if this works, you need to update the Password and navigate back to the login screen
     } else {
-      alert("pw does not match records, or new passwords do not match.  Please try again.");
+      alert("Eithor the current password entered does not match records, or new passwords do not match each other.  Please try again");
     }
 
     
   };
 
-  $scope.toggle1 = function() {
+  $scope.toggle1 = function(name) {
+     // alert("works");
+    //  var elem = document.getElementById(name);
+    //  if (elem.value=="Edit Mode OFF") elem.value = "Edit Mode ON";
+    //  else elem.value = "Edit Mode OFF";
 
-      var f = document.forms['toggle'];
+      var f = document.forms['addPic'];
       //var x = document.getElementByID("UserID");
       for(var i=0,fLen=f.length;i<fLen;i++){
-        if (f.elements[i].readOnly && f.elements[i].id != "UserID" && f.elements[i].id != "CompanyName" && f.elements[i].id != "Location"){
+        if (f.elements[i].readOnly && f.elements[i].id != "UserID" && f.elements[i].id != "CompanyName" && f.elements[i].id != "Location" && f.elements[i].id != "DateJoined"){
           f.elements[i].readOnly = false;
           //alert(f.elements[i].id);
         } else {
