@@ -20,8 +20,8 @@
         </div>
         <div class="row my-row">
           <div class="col-4 my-col dash-actions">
-            <p> Find a Product by ID</p>
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <!-- <p> Find a Product by ID</p> -->
+            <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
           </div>
           <div class="col-4 my-col dash-actions">
             <p> Find a Product Page</p>
@@ -415,8 +415,8 @@
                   </div>
                 </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary">Add Another</button>
-              <button type="button" class="btn btn-primary" ng-click='addCompany()'>Add company</button>
+              <!-- <button type="button" class="btn btn-secondary">Add Another</button>
+              <button type="button" class="btn btn-primary" ng-click='addCompany()'>Add company</button> -->
             </div>
             </form>
           </div>
@@ -561,8 +561,8 @@
                       <b>Is this a CRN hose?</b>
                     </div>
                     <div class="col-4 my-col">
-                      <input class="form-control mr-sm-2" type="radio" aria-label="temprange" name="crn" id='CRNyes' value="1" required>Yes<br>
-                      <input class="form-control mr-sm-2" type="radio" aria-label="temprange" name="crn" id='CRNno' value="0" required>No<br>
+                      <input class="form-control mr-sm-2" type="radio" aria-label="temprange" name="crn" id='CRNyes' value="Yes" required>Yes<br>
+                      <input class="form-control mr-sm-2" type="radio" aria-label="temprange" name="crn" id='CRNno' value="No" required>No<br>
                     </div>
 </div>
 <div class="row my-row">
@@ -570,8 +570,8 @@
                       <b>Hose status</b>
                     </div>
                     <div class="col-10 my-col">
-                      <input class="form-control mr-sm-2" type="radio" aria-label="temprange" name="status" id='statusYes' value="1" required>In Service<br>
-                      <input class="form-control mr-sm-2" type="radio" aria-label="temprange" name="status" id='statusNo' value="0" required>Out of Service<br>
+                      <input class="form-control mr-sm-2" type="radio" aria-label="temprange" name="status" id='statusYes' value="In Service" required>In Service<br>
+                      <input class="form-control mr-sm-2" type="radio" aria-label="temprange" name="status" id='statusNo' value="Out of Service" required>Out of Service<br>
                     </div>
 </div>
                     <!-- <div class="col-5 my-col">

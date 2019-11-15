@@ -153,19 +153,24 @@ app.controller('ProductController', function($scope, $http, transferService) {
     var tester = document.getElementById('Tester').value;
     //var inService = document.getElementById('inService').value;
 
+    var msg = "";
+
     if(PO == ""){
-      alert("Please enter a valid PO number");
-      return;
+    //  alert("Please enter a valid PO number");
+    //  return;
+    msg = msg.concat("Please enter a valid PO number\n");
     }
 
     if(testDate == ""){
-      alert("Please enter a valid test date");
-      return;
+     // alert("Please enter a valid test date");
+     // return;
+     msg = msg.concat("Please enter a valid test date\n");
     }
 
     if(tester == "na"){
-      alert("Please select a tester");
-      return;
+    //  alert("Please select a tester");
+    //  return;
+    msg = msg.concat("Please select a tester\n");
     }
 
     var y = document.getElementsByName('status');
@@ -177,7 +182,13 @@ app.controller('ProductController', function($scope, $http, transferService) {
     }
 
     if(inService == null){
-      alert("Select a status for the hose");
+    //  alert("Select a status for the hose");
+    //  return;
+    msg = msg.concat("Select a status for the hose\n");
+    }
+
+    if(msg != ""){
+      alert(msg);
       return;
     }
 

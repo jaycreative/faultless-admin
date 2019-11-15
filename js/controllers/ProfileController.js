@@ -45,28 +45,37 @@ app.controller('ProfileController', function($scope, $http, $location, transferS
     var phonePattern = new RegExp(document.getElementById("PersonalPhone").getAttribute("pattern"));
     var emailPattern = new RegExp(document.getElementById("Email").getAttribute("pattern"));
 
+    var msg = "";
       //check if Ext is a number of 5 digits
   if(Ext > 99999 || Ext < 0 || isNaN(Ext)){
     if(!Ext == ""){
-    alert("Ext must contain only digits (0-99999)");
-    return;
+   // alert("Ext must contain only digits (0-99999)");
+   // return;
+   msg = msg.concat("Ext must contain only digits (0-99999)\n");
     }
   }
 
   //check if phone number matches pattern
    if(PersonalPhone != ""){
      if(!phonePattern.test(PersonalPhone)){
-       alert("Mobile phone number is invalid.  Please enter a valid phone number");
-       return;
+      // alert("Mobile phone number is invalid.  Please enter a valid phone number");
+      // return;
+      msg = msg.concat("Mobile phone number is invalid.  Please enter a valid phone number\n");
      }
    }
 
     //check if email matches pattern
     if(Email != ""){
       if(!emailPattern.test(Email)){
-        alert("Email is invalid.  Please enter a valid email address");
-        return;
+      //  alert("Email is invalid.  Please enter a valid email address");
+      //  return;
+      msg = msg.concat("Email is invalid.  Please enter a valid email address\n");
       }
+    }
+
+    if(msg != ""){
+      alert(msg);
+      return;
     }
 
 
@@ -129,6 +138,8 @@ app.controller('ProfileController', function($scope, $http, $location, transferS
     var DateJoined = document.getElementById('DateJoined').value;
 
     var phonePattern = new RegExp(document.getElementById("CompanyPhone").getAttribute("pattern"));
+
+    var msg = "";
 
       //check if phone number matches pattern
    if(CompanyPhone != ""){

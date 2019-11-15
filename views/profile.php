@@ -27,12 +27,12 @@
           <div class="col-3 my-col">
             <nav class="nav-sidebar">
           		<ul class="nav tabs">
-                <li class="active" name="personal_information" ng-click="name = 'personal_information'">Personal Information</li><br>
-                <li class="" name="security" ng-click="name = 'security'">Password and Security</li><br>
-                <li class="" name='photo' ng-click="name = 'photo'">Profile Photo</li><br>
-                <li class="" name="location" ng-click="name = 'location'">Company Information/Location</li><br>
+                <li class="active" name="personal_information" ng-click="name = 'personal_information'">Personal Information</li><br/>
+                <li class="" name="security" ng-click="name = 'security'">Change password information</li><br/>
+                <li class="" name='photo' ng-click="name = 'photo'">Profile Photo</li><br/>
+                <li class="" name="location" ng-click="name = 'location'">Company Information/Location</li><br/>
           		</ul>
-	           </nav>
+	          </nav>
           </div>
           <!-- right-side -->
           <div class="col-9 my-col">

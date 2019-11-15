@@ -14,7 +14,7 @@ app.controller('DashboardController', function($scope, $http, transferService) {
       alert(response.data);   
       $scope.names = response.data;}
     );  
-  }
+  };
 
 
   
@@ -109,19 +109,24 @@ $scope.goToProduct6 = function(index){
     //    alert('new Company Added!');   
     //    $scope.names = response.data;}
 
+    var msg = "";
        
     //  );  
 
     if(!document.getElementById("username").value){
-      alert("Username field cannot be blank!");
-      return;
+      //alert("Username field cannot be blank!");
+      msg = msg.concat("Username field cannot be blank!\n");
+      //return;
   }
   if(!document.getElementById("CompanyName").value){
-    alert("Company name field cannot be blank!");
-    return;
+    //alert("Company name field cannot be blank!");
+   // return;
+   msg = msg.concat("Company name field cannot be blank!\n");
   }
   if(!document.getElementById("location").value){
-    alert("The location field cannot be blank!");
+    //alert("The location field cannot be blank!");
+    msg = msg.concat("The location field cannot be blank!\n");
+    
   }
 
   var username = document.getElementById('username').value; //
@@ -146,37 +151,41 @@ $scope.goToProduct6 = function(index){
    
 
   //var fileType = document.getElementById("file1").files[0].type;
-  alert("working");
+  //alert("working");
 
   //check if Ext is a number of 5 digits
   if(Ext > 99999 || Ext < 0 || isNaN(Ext)){
     if(!Ext == ""){
-    alert("Ext must contain only digits (0-99999)");
-    return;
+    //alert("Ext must contain only digits (0-99999)");
+    //return;
+    msg = msg.concat("Ext must contain only digits (0-99,999)\n");
     }
   }
 
   //check if phone number matches pattern
    if(CompanyNumber != ""){
      if(!phonePattern.test(CompanyNumber)){
-       alert("Company Phone number is invalid.  Please enter a valid Company phone number");
-       return;
+       //alert("Company Phone number is invalid.  Please enter a valid Company phone number");
+      // return;
+      msg = msg.concat("Company Phone number is invalid.  Please enter a valid Company phone number\n");
      }
    }
 
     //check if email matches pattern
     if(email != ""){
       if(!emailPattern.test(email)){
-        alert("Email is invalid.  Please enter a valid email address");
-        return;
+      //  alert("Email is invalid.  Please enter a valid email address");
+       // return;
+       msg = msg.concat("Email is invalid.  Please enter a valid email address\n");
       }
     }
 
      //check if company phone number matches pattern
      if(phoneNumber != ""){
       if(!phonePattern.test(phoneNumber)){
-        alert("Phone number is invalid.  Please enter a valid personal phone number");
-        return;
+       // alert("Phone number is invalid.  Please enter a valid personal phone number");
+       // return;
+       msg = msg.concat("Phone number is invalid.  Please enter a valid personal phone number\n");
       }
     }
 
@@ -190,7 +199,7 @@ $scope.goToProduct6 = function(index){
 
   //checking to see if file is provided or not
   if(document.getElementById("file2").files.length == 0) {
-    alert("File not selected.  Image will be default profile pic until new image is added");
+   // alert("File not selected.  Image will be default profile pic until new image is added");
     img = "Profile_Default.jpg";
 
 
@@ -200,8 +209,9 @@ $scope.goToProduct6 = function(index){
   
   
     if(fileSize > 1000000){
-      alert("File is too big!");
-      return;
+     // alert("File is too big!");
+      msg = msg.concat("File is too big!\n");
+     // return;
     }
 
     var ext2 = fileName.split('.');
@@ -209,14 +219,20 @@ $scope.goToProduct6 = function(index){
     img = "Profile_".concat(username,".", ext);
 
     if(!allowed.includes(ext)){
-      alert("Sorry, that type of file is not accepted.  Please enter jpg, jpeg, or png files only!");
-      return;
+    //  alert("Sorry, that type of file is not accepted.  Please enter jpg, jpeg, or png files only!");
+      msg = msg.concat("Sorry, that type of file is not accepted.  Please enter jpg, jpeg, or png files only!\n");
+     // return;
     }
 
   } 
 
+  if(msg != ""){
+    alert(msg);
+    return;
+  }
 
-  alert(img);
+
+  //alert(img);
   //alert("Working so far! Now do queries");
 
   //check if company already exists
@@ -231,14 +247,14 @@ $scope.goToProduct6 = function(index){
           //var n = response.data.localeCompare("1");
           //alert(y)
           var x = response.data.toString();
-          alert("Answer is:" + x);
+         // alert("Answer is:" + x);
          // alert("response is" + x + "thats it");
           if(x == "1"){ 
-            alert("Sorry, this company already exists!");
+            alert("Sorry, this company already exists! Please try a different username");
            //alert(response.data);
             return;
           } else {
-            alert("Company does not exist ADD IT");
+         //   alert("Company does not exist ADD IT");
 
              //$http.post("functions/addCompany.php", {'newHose':newHose, 'img':img, 'description':description }).then(function(response){  
                    //   alert(response.data);   
@@ -248,13 +264,13 @@ $scope.goToProduct6 = function(index){
                     //    alert('new Company Added!');   
                     //    $scope.names = response.data;}
                 
-                    alert(response.data);
+                  //  alert(response.data);
                        
                       
 
                  // var m = response.data.localeCompare("0");
                  var y = response.data.toString();
-                 alert("Company account created!");
+                 //alert("Company account created!");
                 // alert(y);
                  
                      if(y == "0"){
@@ -265,12 +281,12 @@ $scope.goToProduct6 = function(index){
                        //alert("All good, add pic now");
                       // alert("submitting form now!");
                        document.companyForm.submit();
-                      alert("New company profile pic successfully added!");
+                     // alert("New company profile pic successfully added!");
                      // $scope.addUser(username);
                       
                      }
                      $http.post("functions/addUser.php", {'username':username}).then(function(response){  
-                      alert("User added!!");   
+                      alert("New Profile added, you can find this profile by searching for it.");   
                      
                      }); 
                    // $scope.clearCompany();
@@ -357,6 +373,8 @@ $scope.goToProduct6 = function(index){
     var x = document.getElementsByName('crn');
     var y = document.getElementsByName('status');
 
+    var msg = "";
+
  
 
     for(i = 0; i < x.length; i++) { 
@@ -371,7 +389,7 @@ $scope.goToProduct6 = function(index){
       }
     } 
 
-    alert(productID + " " + PRusername + " " + customerPO + " " + orderNum + " " + part + " " + fittings + " " + testDate + " " + testedBy + " " +  type + " " + pressure + " " + diameter + " " + length + " " + temperature + ' ' + crn + " " + inService)
+  //  alert(productID + " " + PRusername + " " + customerPO + " " + orderNum + " " + part + " " + fittings + " " + testDate + " " + testedBy + " " +  type + " " + pressure + " " + diameter + " " + length + " " + temperature + ' ' + crn + " " + inService)
 
      if(productID=="" || PRusername=="" || customerPO=="" || orderNum=="" || part=="" || fittings=="" || testDate=="" || testedBy=="na" || type=="na" || pressure=="" || diameter=="" || length=="" || temperature=="" || crn==null || inService==null){
        alert("All fields are required.  Please fill all fields and submit again");
@@ -379,26 +397,45 @@ $scope.goToProduct6 = function(index){
      }
 
     if(temperature > 500 || temperature <-500 || isNaN(temperature)){
-      alert("temperature must have a value of -500 to 500 degrees fahrenheit");
-      return;
+      //alert("temperature must have a value of -500 to 500 degrees fahrenheit");
+     // return;
+     msg = msg.concat("temperature must have a value of -500 to 500 degrees fahrenheit\n");
     }
 
     if(pressure > 99999 || pressure < 0 || isNaN(pressure)){
-      alert("pressure must have a value of 0 to 99999 PSI");
-      return;
+    //  alert("pressure must have a value of 0 to 99999 PSI");
+     // return;
+     msg = msg.concat("pressure must have a value of 0 to 99999 PSI\n");
     }
 
     if(diameter > 99 || diameter < 0 || isNaN(diameter)){
-      alert("diameter must have a value of 0 to 99 inches");
-      return;
+     // alert("diameter must have a value of 0 to 99 inches");
+     // return;
+     msg = msg.concat("diameter must have a value of 0 to 99 inches\n");
     }
 
     if(length > 999 || length < 0 || isNaN(length)){
-      alert("length must have a value of 0 to 999 feet");
-      return;
+      //alert("length must have a value of 0 to 999 feet");
+     //return;
+     msg = msg.concat("length must have a value of 0 to 999 feet\n");
     }
 
+    if(testedBy == "na"){
+     // alert("Please select a tester");
+    //  return;
+    msg = msg.concat("Please select a tester\n");
+    }
 
+    if(type == "na"){
+    //  alert("Please select a hose type");
+     // return;
+     msg = msg.concat("Please select a hose type\n");
+    }
+
+    if(msg != ""){
+      alert(msg);
+      return;
+    }
     // var crn = document.getElementById('crn').value; //
     // var inService = document.getElementById('inService').value; //
    // alert(crn + "    " + inService);
@@ -409,30 +446,22 @@ $scope.goToProduct6 = function(index){
     $http.post("functions/selectCompany.php", {'username':PRusername}).then(function(response){  
         var x = response.data.toString();
         if(x == "0"){
-          alert("Username must exist. Please check again and re-enter correct Username");
+          alert("Username must exist. Please check again and re-enter a correct and existing Username");
           return;
         } else {
 
 
 
-          if(testedBy == "na"){
-            alert("Please select a tester");
-            return;
-          }
 
-          if(type == "na"){
-            alert("Please select a hose type");
-            return;
-          }
 
-          alert("USername exists, please proceed");
+        //  alert("USername exists, please proceed");
           $http.post("functions/selectProduct.php", {'productID':productID}).then(function(response){  
               var y = response.data.toString();
               if(y == "1"){
                 alert("ProductID already exists.  Please enter a unique product ID");
                 return;
               } else {
-                alert("Product ID not in database, you can proceed");
+              //  alert("Product ID not in database, you can proceed");
                 $http.post("functions/addProduct.php", {'productID':productID, 'PRusername':PRusername, 'customerPO':customerPO, 'orderNum':orderNum, 'part':part, 'fittings':fittings, 'testDate':testDate, 'testedBy':testedBy, 'type':type, 'pressure':pressure, 'diameter':diameter, 'length':length, 'temperature':temperature, 'crn':crn, 'inService':inService}).then(function(response){  
                       var z = response.data.toString();
 
@@ -475,17 +504,26 @@ $scope.goToProduct6 = function(index){
   $scope.addHose = function(){  
     //alert(document.getElementById("wizard-picture").value);
 
+    var msg = "";
     //check to make sure all fields are provided
     if(!document.getElementById("newHose").value){
-        alert("Hose field cannot be blank!");
-        return;
+      msg = msg.concat("Hose field cannot be blank!\n");
+       // alert("Hose field cannot be blank!");
+       // return;
     }
     if(!document.getElementById("description").value){
-      alert("Description field cannot be blank!");
-      return;
+      //alert("Description field cannot be blank!");
+      // return;
+      msg = msg.concat("Description field cannot be blank!\n");
     }
     if(!document.getElementById("file1").value){
-      alert("An image must be selected!");
+     // alert("An image must be selected!");
+      msg = msg.concat("An image must be selected!\n");
+    }
+
+    if(msg != ""){
+      alert(msg);
+      return;
     }
 
     var newHose = document.getElementById('newHose').value; //

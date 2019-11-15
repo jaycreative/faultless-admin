@@ -46,10 +46,10 @@
               <li>Hose status: {{inService}}</li>
               <li>Last test Date: {{testDate}}</li>
               <li>Tester: {{testedBy}}</li>
-
-
-              <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit info</button></li>
             </ul>
+
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit info</button>
+            
            <!-- <h3 class ="details">Testing:</h3> 
             <ul>
               <li class="tested by">Phil Robertson</li>
@@ -183,8 +183,8 @@
                       <b>In Service?</b>
                     </div>
                     <div class="col-10 my-col">
-                    <input class="form-control mr-sm-2" type="radio" aria-label="temprange" name="status" id='statusYes' value="1" required>In Service<br>
-                    <input class="form-control mr-sm-2" type="radio" aria-label="temprange" name="status" id='statusNo' value="0" required>Out of Service<br>
+                    <input class="form-control mr-sm-2" type="radio" aria-label="temprange" name="status" id='statusYes' value="In Service" required>In Service<br>
+                    <input class="form-control mr-sm-2" type="radio" aria-label="temprange" name="status" id='statusNo' value="Out of Service" required>Out of Service<br>
                     </div>
                 </div>
 
