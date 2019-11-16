@@ -22,7 +22,9 @@
             <h1>{{hoseType}} hose products for customer {{id}}</h1>
           </div>
             <div class="col-3 my-col">
+            <!-- <form name="certificateForm" action="views/certificate.php" target="_blank" method="POST" enctype="multipart/form-data"> -->
             <button type="button" ng-click="generate()">Generate Certificate</button>
+            <!-- </form> -->
           </div>
         </div>
 

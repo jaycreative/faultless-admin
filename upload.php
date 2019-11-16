@@ -2,7 +2,7 @@
  //insert.php  
 //  $connect = mysqli_connect("localhost", "root", "20152maW", "Faultless");  
 //  $data = json_decode(file_get_contents("php://input"));  
-if(isset($_POST['submit'])){
+
     $file = $_FILES['file'];
    print_r($file);
     $fileName = $_FILES['file']['name'];
@@ -33,7 +33,7 @@ if(isset($_POST['submit'])){
     } else {
         echo "You cannot upload files of this type!";
     }
-}
+
 
 ?>
 

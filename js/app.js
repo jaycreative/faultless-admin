@@ -61,6 +61,17 @@ app.config(function ($routeProvider) {
         templateUrl: 'views/profile.php',
         controller: "ProfileController"
       })
+      .when('/certificate', { 
+        // resolve: {
+        //   check: function($location, transferService) {
+        //     if(!transferService.isloggedin()) {
+        //       $location.path('/');
+        //     }
+        //   },
+        // },
+        templateUrl: 'views/certificate.php',
+        controller: "certificateController"
+      })
       // .otherwise({
       //     redirectTo: "/"
       // });

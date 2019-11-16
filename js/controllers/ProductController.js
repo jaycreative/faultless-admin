@@ -1,4 +1,4 @@
-app.controller('ProductController', function($scope, $http, transferService) {
+app.controller('ProductController', function($scope, $http, $location, transferService) {
   $scope.title= "This is the main screen of the App try this";
   $scope.next= "This is the next line";
 
@@ -132,11 +132,22 @@ app.controller('ProductController', function($scope, $http, transferService) {
       return;
   }
 
-      alert(productIDs);
+     // alert(productIDs);
       //Once certificate is actually created, we will take the productIDs array and add it to our service
       //Then, we can use those productIDs to determine which certficates we need to generate.  
       //Then generating placeholder data is simple.
       //Make sure certificates open in a new tab/window
+
+      transferService.setProducts(productIDs);
+     // alert(transferService.getProducts());
+      
+    //  for(var i = 0; i < productIDs.length; i++){
+     ///   alert(productIDs[i]);
+       // $window.open('#!certificate', '_blank');
+      // document.certificateForm.submit();
+      $location.path('/certificate');
+
+     // }
 
 
     // for (y = 0; y < indexes.length; y++){

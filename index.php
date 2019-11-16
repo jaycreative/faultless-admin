@@ -23,6 +23,7 @@
      <script src="js/controllers/searchProductController.js"></script>
      <script src="js/controllers/searchCompanyController.js"></script>
      <script src="js/controllers/loginController.js"></script>
+     <script src="js/controllers/certificateController.js"></script>
 
      <script src="js/services/transferService.js"></script>
 

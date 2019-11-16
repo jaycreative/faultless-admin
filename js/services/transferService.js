@@ -3,6 +3,7 @@ app.factory('transferService', function() {
   var productID ="";
   var hoseType ="";
   var loggedin = false;
+  var products = [];
 
   var setUsername = function(name) {
       username = name;
@@ -42,6 +43,14 @@ var isloggedin = function(){
   return loggedin;
 };
 
+var setProducts = function(list) {
+  products = list;
+};
+
+var getProducts = function(){
+  return products;
+};
+
 
   return {
     setUsername: setUsername,
@@ -52,7 +61,9 @@ var isloggedin = function(){
     getHoseType: getHoseType,
     login:login,
     signOut:signOut,
-    isloggedin:isloggedin
+    isloggedin:isloggedin,
+    setProducts:setProducts,
+    getProducts:getProducts
   };
 
 });
