@@ -2,6 +2,7 @@ app.controller('certificateController', function($scope, $http, $window, transfe
   $scope.title= "This is the main screen of the App try this";
   $scope.next= "This is the next line";
   $scope.check2 = "THIS SHOULD WORK";
+  $scope.currentDate = new Date();
 
 
   $scope.products = transferService.getProducts();
@@ -23,7 +24,7 @@ app.controller('certificateController', function($scope, $http, $window, transfe
 
     }
 
-}
+  }
   
 
 });

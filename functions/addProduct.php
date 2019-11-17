@@ -1,9 +1,9 @@
 <?php
- //insert.php  
- $connect = mysqli_connect("localhost", "root", "20152maW", "Faultless");  
- $data = json_decode(file_get_contents("php://input"));  
- if(count($data) > 0)  
- {  
+ //insert.php
+ $connect = mysqli_connect("localhost", "root", "LastkingS01", "Faultless");  
+ $data = json_decode(file_get_contents("php://input"));
+ if(count($data) > 0)
+ {
       $productID = mysqli_real_escape_string($connect, $data->productID);
       $PRusername = mysqli_real_escape_string($connect, $data->PRusername);
       $customerPO = mysqli_real_escape_string($connect, $data->customerPO);
@@ -40,7 +40,7 @@
      //  echo $timestamp;
 
      $sql = "INSERT INTO product VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
- 
+
      $stmt = mysqli_stmt_init($connect);
     if(!mysqli_stmt_prepare($stmt, $sql)){
           echo "SQL statement failed!";
@@ -48,17 +48,17 @@
           mysqli_stmt_bind_param($stmt, "ssssssssssssssss", $productID, $PRusername, $customerPO, $orderNum, $part, $fittings, $testDate, $timestamp, $testedBy, $type, $pressure, $diameter, $length, $temperature, $crn, $inService );
           $result = mysqli_stmt_execute($stmt);
           echo "$result";
-        
+
      }
 
-     //  $query = "INSERT INTO product VALUES ('$productID', '$PRusername', '$customerPO', '$orderNum', '$part', '$fittings', '$testDate', '$timestamp','$testedBy', '$type', '$pressure', '$diameter', '$length', '$temperature', '$crn', '$inService')";  
-     //  if(mysqli_query($connect, $query))  
-     //  {  
-     //       echo "1";  
-     //  }  
-     //  else  
-     //  {  
-     //       echo "0";  
-     //  }  
- }  
+     //  $query = "INSERT INTO product VALUES ('$productID', '$PRusername', '$customerPO', '$orderNum', '$part', '$fittings', '$testDate', '$timestamp','$testedBy', '$type', '$pressure', '$diameter', '$length', '$temperature', '$crn', '$inService')";
+     //  if(mysqli_query($connect, $query))
+     //  {
+     //       echo "1";
+     //  }
+     //  else
+     //  {
+     //       echo "0";
+     //  }
+ }
  ?>
