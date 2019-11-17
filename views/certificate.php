@@ -24,16 +24,16 @@
           <p class="phoneNumber">905-564-HOSE</p>
           <p class="website">www.faultlesssolutions.com</p>
           <p class="address">6670A Columbus Rd, Mississauga, ON L5T 2G1</p>
-          <p>{{d[0].ProductID}}</p>
+          <p>{{$index}}</p>
         </div>
     </section>
 
     <section class="main">
             <hr>
-      <h1> CRN Test Certificate for Faultless Solutions</h1>
+      <h1> CRN/NONCRN (change this)  Test Certificate for Faultless Solutions</h1>
         <div class="row">
           <div class="col-4">
-            <p>CRN Number:</p>
+            <p>CRN Number: (change this)</p>
           </div>
 
           <div class="col-8">
@@ -70,88 +70,124 @@
             <p class="procedure-hydro">TTT0010001</p>
           </div>
         </div>
-
-        <br>
-
+    </section>
+        
+<!------------------------------------------------------------->
+<section class="main">
         <div class="row">
           <div class="col-4">
             <p>Customer Name:</p>
           </div>
 
           <div class="col-8">
-            <p class="cust-name">GFL Environmental</p>
+            <p class="cust-name"><p>{{d[0].LastName}}, {{d[0].FirstName}}</p>
           </div>
         </div>
 
         <div class="row">
           <div class="col-4">
-            <p>Date:</p>
+            <p>Company Name:</p>
           </div>
 
           <div class="col-8">
-            <p class="date">April 16, 2019</p>
+            <p class="cust-name"><p>{{d[0].CompanyName}}</p>
           </div>
         </div>
 
+        
         <div class="row">
           <div class="col-4">
             <p>Address:</p>
           </div>
 
           <div class="col-8">
-            <p class="address">332 Bennet Road, Bowmanville, Ontario</p>
+            <p class="address">{{d[0].Location}}</p>
           </div>
         </div>
 
         <div class="row">
           <div class="col-4">
-            <p>Serial Number</p>
+            <p>Customer PO:</p>
           </div>
 
           <div class="col-8">
-            <p class="serial-num">SF350 to SF357</p>
+            <p class="address">{{d[0].CustomerPO}}</p>
           </div>
         </div>
-    </section>
 
-    <section class="secondary">
-      <div class="row">
+        <div class="row">
+          <div class="col-4">
+            <p>Date of Certificate:</p>
+          </div>
+
+          <div class="col-8">
+            <p class="date">{{currentDate}}</p>
+          </div>
+        </div>
+      </section>
+
+<!------------------------------------------------------------------------------->
+<section class="main">
+        <div class="row">
+          <div class="col-4">
+            <p>Product ID:</p>
+          </div>
+
+          <div class="col-8">
+            <p class="serial-num">{{d[0].ProductID}}</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-4">
+            <p>Order Number:</p>
+          </div>
+
+          <div class="col-8">
+            <p class="serial-num">{{d[0].OrderNum}}</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-4">
+            <p>Hose Type:</p>
+          </div>
+
+          <div class="col-8">
+            <p class="serial-num">{{d[0].HoseType}}</p>
+          </div>
+        </div>
+
+    <div class="row">
         <div class="col-4">
-          <p>FS Part Number:</p>
+          <p>Part:</p>
         </div>
 
         <div class="col-8">
-          <p class="part-num">PHTTHA3X25SSCXE</p>
+          <p class="part-num">{{d[0].Part}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <p>Fittings:</p>
+        </div>
+
+        <div class="col-8">
+          <p class="part-num">{{d[0].Fittings}}</p>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-4">
-          <p>Order Number:</p>
-        </div>
+      </section>
 
-        <div class="col-8">
-          <p class="order-num">SO-1322</p>
-        </div>
-      </div>
+      <section class="main">
 
       <div class="row">
         <div class="col-4">
-          <p>Customer PO:</p>
+          <p>Hose Length and Diameter:</p>
         </div>
 
         <div class="col-8">
-          <p class="customer-po">PO23510239032</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-4">
-          <p>Date of Test:</p>
-        </div>
-
-        <div class="col-8">
-          <p class="test-date">April 16, 2019</p>
+          <p class="order-num">{{d[0].HoseLength}}' X {{d[0].HoseDiameter}}"</p>
         </div>
       </div>
 
@@ -161,7 +197,7 @@
         </div>
 
         <div class="col-8">
-          <p class="test-pressure">225psi</p>
+          <p class="test-pressure">{{d[0].Pressure}} PSI</p>
         </div>
       </div>
 
@@ -171,7 +207,7 @@
         </div>
 
         <div class="col-8">
-          <p class="hawp-num">150psi</p>
+          <p class="hawp-num">150psi (needs changing)</p>
         </div>
       </div>
 
@@ -181,7 +217,17 @@
         </div>
 
         <div class="col-8">
-          <p class="temp-range">-49F to +180F</p>
+          <p class="temp-range">-49F (needs changing) to +180F</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4">
+          <p>Date of last Test:</p>
+        </div>
+
+        <div class="col-8">
+          <p class="inspector">{{d[0].testDate}}</p>
         </div>
       </div>
 
@@ -191,23 +237,23 @@
         </div>
 
         <div class="col-8">
-          <p class="inspector">Brian William</p>
+          <p class="inspector">{{d[0].TestedBy}}</p>
         </div>
       </div>
     </section>
 
-    <section class="third">
+    <!-- <section class="third">
       <div class="row">
         <h2>Hose Assembly Tested</h2>
         <p class="testing">8 Length of 3in x 25ft 150psi black smooth tank truck
           hose assy cw SS Male x Female camlocks crimped each end. </p>
       </div>
-    </section>
+    </section> -->
 
-    <footer>
+    <!-- <footer>
       <hr>
       <p class="pager">Page 1 of 3</p>
-    </footer>
+    </footer> -->
 
     <p style="page-break-before: always">
 </div>
