@@ -369,6 +369,8 @@ $scope.goToProduct6 = function(index){
     var diameter = document.getElementById('diameter').value; //
     var length = document.getElementById('length').value; //
     var temperature = document.getElementById('temperature').value; //
+    var tempMin = document.getElementById('tempMin').value; //
+    var HAWP = document.getElementById('HAWP').value; //
 
     var x = document.getElementsByName('crn');
     var y = document.getElementsByName('status');
@@ -391,22 +393,34 @@ $scope.goToProduct6 = function(index){
 
   //  alert(productID + " " + PRusername + " " + customerPO + " " + orderNum + " " + part + " " + fittings + " " + testDate + " " + testedBy + " " +  type + " " + pressure + " " + diameter + " " + length + " " + temperature + ' ' + crn + " " + inService)
 
-     if(productID=="" || PRusername=="" || customerPO=="" || orderNum=="" || part=="" || fittings=="" || testDate=="" || testedBy=="na" || type=="na" || pressure=="" || diameter=="" || length=="" || temperature=="" || crn==null || inService==null){
+     if(productID=="" || PRusername=="" || customerPO=="" || orderNum=="" || part=="" || fittings=="" || testDate=="" || testedBy=="na" || type=="na" || pressure=="" || diameter=="" || length=="" || temperature=="" || crn==null || inService==null || tempMin == "" || HAWP == ""){
        alert("All fields are required.  Please fill all fields and submit again");
        return;
      }
 
+    if(tempMin > 500 || tempMin <-500 || isNaN(tempMin)){
+      //alert("temperature must have a value of -500 to 500 degrees fahrenheit");
+     // return;
+     msg = msg.concat("Minimum temperature must have a value of -500 to 500 degrees fahrenheit\n");
+    }
+
     if(temperature > 500 || temperature <-500 || isNaN(temperature)){
       //alert("temperature must have a value of -500 to 500 degrees fahrenheit");
      // return;
-     msg = msg.concat("temperature must have a value of -500 to 500 degrees fahrenheit\n");
+     msg = msg.concat("Maximum temperature must have a value of -500 to 500 degrees fahrenheit\n");
     }
 
     if(pressure > 99999 || pressure < 0 || isNaN(pressure)){
     //  alert("pressure must have a value of 0 to 99999 PSI");
      // return;
-     msg = msg.concat("pressure must have a value of 0 to 99999 PSI\n");
+     msg = msg.concat("Tested pressure must have a value of 0 to 99999 PSI\n");
     }
+
+    if(HAWP > 99999 || HAWP < 0 || isNaN(HAWP)){
+      //  alert("pressure must have a value of 0 to 99999 PSI");
+       // return;
+       msg = msg.concat("HAWP must have a value of 0 to 99999 PSI\n");
+      }
 
     if(diameter > 99 || diameter < 0 || isNaN(diameter)){
      // alert("diameter must have a value of 0 to 99 inches");
@@ -462,7 +476,7 @@ $scope.goToProduct6 = function(index){
                 return;
               } else {
               //  alert("Product ID not in database, you can proceed");
-                $http.post("functions/addProduct.php", {'productID':productID, 'PRusername':PRusername, 'customerPO':customerPO, 'orderNum':orderNum, 'part':part, 'fittings':fittings, 'testDate':testDate, 'testedBy':testedBy, 'type':type, 'pressure':pressure, 'diameter':diameter, 'length':length, 'temperature':temperature, 'crn':crn, 'inService':inService}).then(function(response){  
+                $http.post("functions/addProduct.php", {'productID':productID, 'PRusername':PRusername, 'customerPO':customerPO, 'orderNum':orderNum, 'part':part, 'fittings':fittings, 'testDate':testDate, 'testedBy':testedBy, 'type':type, 'pressure':pressure, 'diameter':diameter, 'length':length, 'temperature':temperature, 'crn':crn, 'inService':inService, 'HAWP':HAWP, 'tempMin':tempMin}).then(function(response){  
                       var z = response.data.toString();
 
                          if(z=="1"){
@@ -499,6 +513,8 @@ $scope.goToProduct6 = function(index){
     document.getElementById('temperature').value = ""; //
     document.getElementById('crn').value = ""; //
     document.getElementById('inService').value = ""; //
+    document.getElementById('tempMin').value = ""; //
+    document.getElementById('HAWP').value = ""; //
   }
 
   $scope.addHose = function(){  

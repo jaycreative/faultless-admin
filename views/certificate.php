@@ -24,22 +24,22 @@
           <p class="phoneNumber">905-564-HOSE</p>
           <p class="website">www.faultlesssolutions.com</p>
           <p class="address">6670A Columbus Rd, Mississauga, ON L5T 2G1</p>
-          <p>{{$index}}</p>
+          <!-- <p>{{$index}}</p> -->
         </div>
     </section>
 
     <section class="main">
             <hr>
-      <h1> CRN/NONCRN (change this)  Test Certificate for Faultless Solutions</h1>
+      <h1> {{crns[$index]}}  Test Certificate for Faultless Solutions</h1>
         <div class="row">
           <div class="col-4">
-            <p>CRN Number: (change this)</p>
+            <p>{{crns2[$index]}}</p>
           </div>
 
-          <div class="col-8">
+          <!-- <div class="col-8">
             <p class="crn-number">0D21291.5 Per TSSA B51</p>
           </div>
-        </div>
+        </div> -->
 
         <div class="row">
           <div class="col-4">
@@ -207,7 +207,7 @@
         </div>
 
         <div class="col-8">
-          <p class="hawp-num">150psi (needs changing)</p>
+          <p class="hawp-num">{{d[0].HAWP}} PSI</p>
         </div>
       </div>
 
@@ -217,7 +217,7 @@
         </div>
 
         <div class="col-8">
-          <p class="temp-range">-49F (needs changing) to +180F</p>
+          <p class="temp-range">{{d[0].tempMin}}F to {{d[0].Temperature}}F</p>
         </div>
       </div>
 

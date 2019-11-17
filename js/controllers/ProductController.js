@@ -44,6 +44,8 @@ app.controller('ProductController', function($scope, $http, $location, transferS
      $scope.crn = $scope.initUser[0].CRN;
      $scope.inService = $scope.initUser[0].InService;
      $scope.description = $scope.initUser[0].description;
+     $scope.tempMin = $scope.initUser[0].tempMin;
+     $scope.HAWP = $scope.initUser[0].HAWP;
     //alert($scope.names[0]);
 
     var productID = $scope.productID;
@@ -77,6 +79,8 @@ app.controller('ProductController', function($scope, $http, $location, transferS
      $scope.crn = $scope.names[index].CRN;
      $scope.inService = $scope.names[index].InService;
      $scope.description = $scope.names[index].description;
+     $scope.tempMin = $scope.initUser[index].tempMin;
+     $scope.HAWP = $scope.initUser[index].HAWP;
     //alert($scope.names[0]);
     $scope.currentIndex = index;
 

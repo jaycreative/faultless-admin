@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 10, 2019 at 05:32 PM
+-- Generation Time: Nov 17, 2019 at 05:12 AM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.11
 
@@ -85,7 +85,8 @@ INSERT INTO `comment` (`ProductID`, `DateAdded`, `Comment`) VALUES
 ('PR986837', '2019-11-09 20:09:26', 'testest'),
 ('PR986837', '2019-11-09 21:04:20', 'test'),
 ('PR986837', '2019-11-09 21:04:38', 'test'),
-('PR986837', '2019-11-09 21:05:30', 'test');
+('PR986837', '2019-11-09 21:05:30', 'test'),
+('PR986837', '2019-11-15 04:24:58', 'test');
 
 -- --------------------------------------------------------
 
@@ -114,7 +115,12 @@ CREATE TABLE `company` (
 --
 
 INSERT INTO `company` (`Username`, `CompanyName`, `Location`, `FirstName`, `LastName`, `Email`, `PersonalPhone`, `Ext`, `CompanyPhone`, `NumberOfHoses`, `Website`, `Pic`, `DateJoined`) VALUES
-('ID019923', 'Petro Canada', '1111 Baker Road', 'Donald', 'Trump', 'Andrew.williams2@ontario.ca', '(905) 988-9865', 0, '', 1, 'www.FaultlessIO.ca', 'Profile_ID019923.jpg', '2019-08-19'),
+('I0237842', '123FakeCompany', '123 Fake Street', '', '', '', '', 99999, '', 0, '', 'Profile_Default.jpg', '2019-11-11'),
+('I0237843', '123FakeCompany', '123 Fake Street', '', '', '', '', 0, '', 0, '', 'Profile_Default.jpg', '2019-11-11'),
+('I0237845', '123FakeCompany', '123 Fake Street', '', '', '', '', 344, '', 0, '', 'Profile_Default.jpg', '2019-11-11'),
+('I9823y84324', 'TesterCompany54321', '123 Fake Street', '', '', '', '(123)123-1234', 0, '', 0, '', 'Profile_Default.jpg', '2019-11-11'),
+('ID019923', 'Petro Canada', '1111 Baker Road', 'Donald', 'Trump', '', '', 99, '', 1, 'www.FaultlessIO.ca', 'Profile_ID019923.jpg', '2019-08-19'),
+('ID0235r0934', 'TesterCompany54321', 'twettewfdfe', '', '', '', '', 0, '(905)234-2323', 0, '', 'Profile_Default.jpg', '2019-11-11'),
 ('ID10001', 'TesterCompany54321', '123 Fake Street', 'Ashley', 'Williams', 'aw07@live.ca', '6476876753', 34554, '', 0, 'www.tester.com', 'Profile_Default.jpg', '2019-11-06'),
 ('ID10002', 'TesterCompany54321', '123 Fake Street', 'Ashley', 'Williams', 'aw07@live.ca', '6476876753', 34554, '', 0, '', 'Profile_ID10002.jpg', '2019-11-06'),
 ('ID10003', 'TesterCompany54321', '123 Fake Street', 'Ashley', 'Williams', 'aw07@live.ca', '6476876753', 34554, '', 0, '', 'Profile_ID10003.jpg', '2019-11-06'),
@@ -137,6 +143,7 @@ INSERT INTO `company` (`Username`, `CompanyName`, `Location`, `FirstName`, `Last
 ('ID10052', 'TesterCompany54321', '123 Fake Street', 'Ashley', 'Williams', 'aw07@live.ca', '6476876753', 4354, '6476695470', 0, 'www.tester.com', 'Profile_ID10052.jpg', '2019-11-09'),
 ('ID10054', 'TesterCompany54321', '123 Fake Street', '', '', '', '', 0, '', 0, '', 'Profile_ID10054.jpg', '2019-11-09'),
 ('ID123321', '123FakeCompany', '123 Fake Street', 'Ashley', 'Williams', 'aw07@live.ca', '6476876753', 3455, '', 0, '', 'Profile_ID123321.jpg', '2019-11-08'),
+('ID23r78324', 'TesterCompany54321', '124 Fake Street', '', '', '', '', 0, '', 0, '', 'Profile_Default.jpg', '2019-11-11'),
 ('ID32135', 'TesterCompany54321', '1244 Fake Street', 'Ashley', 'Williams', 'aw07@live.ca', '6476876753', 6876753, '6476695470', 1, 'www.tester.com', 'Profile_Default.jpg', '2019-11-03'),
 ('ID321365', 'TesterCompany54321', '1244 Fake Street', 'Ashley', 'Williams', 'aw07@live.ca', '6476876753', 6876753, '6476695470', 1, 'www.tester.com', 'Profile_ID321365.jpg', '2019-11-03'),
 ('ID394924', 'Transway', '123 John street', 'Andrew', 'Williams', 'Fake_Email@hotmail.com', '(905) 927-2345', 0, '6476876753', 1, 'www.AndrewWilliams.com/hoses', 'Profile_ID394924.jpg', '2019-09-16'),
@@ -150,7 +157,7 @@ INSERT INTO `company` (`Username`, `CompanyName`, `Location`, `FirstName`, `Last
 ('ID4322211', 'TesterCompany54321', '123 Fake Street', 'Ashley', 'Williams', 'aw07@live.ca', '6476876753', 3434, '', 0, 'www.tester.com', 'Profile_ID4322211.jpg', '2019-11-09'),
 ('ID4322212', 'TesterCompany54321', '123 Fake Street', 'Ashley', 'Williams', 'aw07@live.ca', '6476876753', 0, '', 0, 'www.tester.com', 'Profile_ID4322212.jpg', '2019-11-09'),
 ('ID432222', 'TesterCompany54321', '124 Fake Street', 'Ashley', 'Williams', 'aw07@live.ca', '6476876753', 34545, '', 0, 'www.tester.com', 'Profile_ID432222.jpg', '2019-11-09'),
-('ID432223', 'Flochem', '934 Queen St.', 'Andrew', 'Williams', 'Fake_Email@hotmail.com', '(905) 927-2345', 54321, '123 Fake street Suite 23434', 1, 'Walmart.com/hoses', 'Profile_ID432223.jpg', '2019-10-31'),
+('ID432223', 'Flochem', '934 Queen St.', 'Andrews', 'Williams', 'Fake_Email@hotmail.com', '(657)123-1234', 0, '(123)123-1233', 1, '', 'Profile_ID432223.jpg', '2019-10-31'),
 ('ID432223324', 'TesterCompany54321', '124 Fake Street', 'Ashley', 'Williams', 'aw07@live.ca', '6476876753', 4354, '', 0, 'www.tester.com', 'Profile_ID432223324.jpg', '2019-11-09'),
 ('ID4322234554', 'TesterCompany54321', '124 Fake Street', 'Ashley', 'Williams', 'aw07@live.ca', '6476876753', 3455, '', 0, 'www.tester.com', 'Profile_ID4322234554.jpg', '2019-11-09'),
 ('ID43321', 'TesterCompany54321', '123 Fake Street', 'Ashley', 'Williams', 'aw07@live.ca', '6476876753', 43543, '6476695470', 0, 'www.tester.com', 'Profile_ID43321.jpg', '2019-11-09'),
@@ -174,6 +181,14 @@ INSERT INTO `company` (`Username`, `CompanyName`, `Location`, `FirstName`, `Last
 ('ID837588', 'TesterCompany54321', '123 Fake Street', 'Ashley', 'Williams', 'aw07@live.ca', '6476876753', 43543, '', 0, '', 'Profile_ID837588.jpg', '2019-11-05'),
 ('ID863464', '123FakeCompany', '123 Fake Street', 'Ashley', 'Williams', 'aw07@live.ca', '6476876753', 534, '', 0, 'www.tester.com', 'Profile_ID863464.jpg', '2019-11-09'),
 ('ID876758', 'TesterCompany54321', '123 Fake Street', 'Ashley', 'Williams', 'aw07@live.ca', '6476876753', 34545, '', 0, '', 'Profile_ID876758.jpg', '2019-11-05'),
+('ID8934', 'TesterCompany54321', '123 Fake Street', '', '', '', '', 0, '', 0, '', 'Profile_ID8934.jpg', '2019-11-11'),
+('ID89342344', 'TesterCompany54321', '123 Fake Street', '', '', '', '', 0, '', 0, '', 'Profile_Default.jpg', '2019-11-11'),
+('ID893423444', 'TesterCompany54321', '123 Fake Street', '', '', '', '(123)123-1234', 0, '', 0, '', 'Profile_Default.jpg', '2019-11-11'),
+('ID9234234', '123FakeCompany', '123 Fake Street', '', '', '', '', 0, '', 0, '', 'Profile_Default.jpg', '2019-11-11'),
+('ID9234235', '123FakeCompany', '123 Fake Street', '', '', '', '', 123, '', 0, '', 'Profile_ID9234235.jpg', '2019-11-11'),
+('ID9234236', '123FakeCompany', '123 Fake Street', '', '', '', '(905)123-1234', 123, '', 0, '', 'Profile_ID9234236.jpg', '2019-11-11'),
+('ID98234334', 'TesterCompany54321', '123 Fake Street', '', '', '', '', 0, '', 0, '', 'Profile_Default.jpg', '2019-11-11'),
+('ID983247823', 'TesterCompany54321', '123 Fake Street', '', '', '3hifod@hotmail.com', '', 0, '', 0, '', 'Profile_Default.jpg', '2019-11-11'),
 ('ID9843375', 'TesterCompany54321', '123 Fake Street', 'Ashley', 'Williams', 'aw07@live.ca', '6476876753', 3453, '', 0, '', 'Profile_ID9843375.jpg', '2019-11-08'),
 ('ID999876', 'TesterCompany54321', '123 Fake Street', 'Ashley', 'Williams', 'aw07@live.ca', '6476876753', 43455, '', 0, '', 'Profile_ID999876.jpg', '2019-11-05'),
 ('ID999977', 'TesterCompany54321', '123 Fake Street', 'Ashley', 'Williams', 'aw07@live.ca', '6476876753', 43545, '', 0, '', 'Profile_ID999977.jpg', '2019-11-05'),
@@ -240,6 +255,7 @@ INSERT INTO `hose` (`HoseType`, `PicURL`, `Description`) VALUES
 ('mark25', 'mark25_hose.jpg', 'tsererste'),
 ('mark28', 'mark28_hose.jpg', 'test'),
 ('mark5', 'tester', 'mark5_hose.jpg'),
+('Mark58', 'Description is over here', 'Mark58_hose.jpg'),
 ('mark6', 'tester', 'mark6_hose.jpg'),
 ('mark7', 'mark7_hosejpg', 'mark7'),
 ('MARk76', 'tesretstrgdfgf', 'MARk76_hose.jpg'),
@@ -254,6 +270,8 @@ INSERT INTO `hose` (`HoseType`, `PicURL`, `Description`) VALUES
 ('tester mark 101', 'testerttetest', 'tester mark 101_hose.jpg'),
 ('tester mark 18', 'tester mark 18_hose.jpg', 'test'),
 ('testeresr ', 'xcgdgfgd.jpg', 'this s fo testing'),
+('testeretsest', 'testersets', 'testeretsest_hose.jpg'),
+('testestesr', 'tetserset', 'testestesr_hose.jpg'),
 ('testing upload mix', 'fake.jpg', 'this s for another test again!!!'),
 ('Vanilla', 'sidsidsdsndd.jpg', 'This is the newest Vanilla Hose! Enjoy it');
 
@@ -273,15 +291,29 @@ CREATE TABLE `loginpage` (
 --
 
 INSERT INTO `loginpage` (`Username`, `Pass_word`) VALUES
+('I0237842', 'test'),
+('I0237843', 'test'),
+('I0237845', 'test'),
+('I9823y84324', 'test'),
 ('ID019923', 'tester'),
+('ID0235r0934', 'test'),
 ('ID10052', 'tester'),
 ('ID10054', 'tester'),
 ('ID123321', 'test'),
+('ID23r78324', 'test'),
 ('ID394924', 'tester'),
 ('ID396441', 'test'),
 ('ID432223', 'tester'),
 ('ID823484', 'test'),
 ('ID863464', 'test'),
+('ID8934', 'test'),
+('ID89342344', 'test'),
+('ID893423444', 'test'),
+('ID9234234', 'test'),
+('ID9234235', 'test'),
+('ID9234236', 'test'),
+('ID98234334', 'test'),
+('ID983247823', 'test'),
 ('ID9843375', 'test'),
 ('sysadmin', 'test');
 
@@ -306,45 +338,56 @@ CREATE TABLE `product` (
   `HoseDiameter` double NOT NULL,
   `HoseLength` double NOT NULL,
   `Temperature` double NOT NULL,
-  `CRN` tinyint(1) NOT NULL,
-  `InService` tinyint(1) NOT NULL
+  `CRN` text NOT NULL,
+  `InService` text NOT NULL,
+  `HAWP` int(11) NOT NULL,
+  `tempMin` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`ProductID`, `Username`, `CustomerPO`, `OrderNum`, `Part`, `Fittings`, `testDate`, `creationDate`, `TestedBy`, `HoseType`, `Pressure`, `HoseDiameter`, `HoseLength`, `Temperature`, `CRN`, `InService`) VALUES
-('ID10007', 'ID432223', '45345', '345454', '345', 'test', '2019-08-23', '2019-11-09 08:18:48', 'brian willimas', 'PGP', 234, 123, 123, 23, 0, 1),
-('PR009809', 'ID432223', '6543252', '7895', 'NF-PSP8X30CSFXCSF', 'CS Flange', '2019-10-30', '2017-10-27 15:41:00', 'Brian Williams', 'PSP', 1050, 3.6, 225, 175, 1, 1),
-('PR009809-z', 'ID432223', 'test', 'estest', 'est', 'test', '2013-08-09', '2019-11-06 03:32:37', 'brian williams', 'food', 123, 123, 123, 12, 1, 1),
-('PR235112', 'ID432223', '4322345', '3222', 'fin340ffef', 'NRF-efin34', '2018-08-12', '2019-08-27 15:41:04', 'Brian Williams', 'PSP', 2500, 125, 80, 25, 1, 1),
-('PR34353', 'ID432223', 'test', '34545', 'test', 'tes', '2019-11-05', '2019-11-06 02:03:28', 'Brian Williams', 'FOOD', 100, 100, 100, 23, 1, 1),
-('PR4535455', 'ID432223', '3454', '43566', 'test', 'test', '2019-08-08', '2019-11-06 02:09:55', 'Brian Williams', 'FOOD', 100, 100, 100, 14, 1, 1),
-('PR63545345', 'ID432223', '453455', '4355', 'test', 'test', '2017-08-09', '2019-11-06 02:24:47', 'Bruce Williams', 'FOOD', 56, 56, 56, 23, 1, 1),
-('PR8364837a', 'ID432223', '345', '43555', 'test', 'test', '2018-08-05', '2019-11-06 02:14:06', 'Brian Williams', 'FOOD', 123, 123, 123, 24, 1, 1),
-('PR83648732', 'ID432223', '34324334', '2344', 'test', 'test', '2019-08-09', '2019-11-09 00:18:27', 'Brian WIlliams', '123', 123, 123, 123, 23, 1, 0),
-('PR837448', 'ID432223', '374635', '3455', 'NCE X NCe', 'NCE X NCEYIGJ', '2019-09-11', '2019-11-03 16:38:32', 'Michael Williams', 'FOOD', 1100, 25, 250, 35, 1, 1),
-('PR837459', 'ID432223', '374635', '3455', 'NCE X NCe', 'NCE X NCEYIGJ', '2019-09-11', '2019-11-03 16:40:22', 'Michael Williams', 'FOOD', 1100, 25, 250, 35, 1, 1),
-('PR844356', 'ID396441', '513326', '558754', 'PH-FH2.5X25ALCXE', 'AL CxE', '2015-12-12', '2019-06-21 15:41:04', 'Billy Forenzo', 'FOOD', 550, 1, 175, 112, 0, 1),
-('PR866540', 'ID432223', '345435', '3454', 'est', 'testes', '2013-02-02', '2019-11-06 02:49:05', 'andrew willians', 'PSP', 123, 123, 123, 23, 1, 0),
-('PR866540', 'ID823484', '239986', '45367', 'NF-PGP2X10SSAXD', 'SS A+D', '2015-10-14', '2018-10-22 15:41:04', 'Derek Williams', 'PGP', 550, 1.1, 155, 225, 0, 0),
-('PR8734384', 'ID432223', '323432', '4324', '', 'tetsst', '2019-07-08', '2019-11-06 02:39:31', 'brian williams', 'FOOD', 123, 123, 123, 12, 1, 1),
-('PR877873', 'ID432223', '3453454', '3432', 'test', 'test', '2018-06-13', '2019-11-06 02:16:02', 'brian williams', 'FOOD', 67, 67, 67, 23, 1, 1),
-('PR887387', 'ID432223', '4354', '3244', 'test', 'testes', '2017-09-09', '2019-11-06 02:33:08', 'michael Williams', 'FOOD', 123, 123, 123, 21, 1, 1),
-('PR893738944', 'ID432223', '3454543', '454', 'test', 'test', '2019-09-09', '2019-11-09 00:20:54', 'tester', 'FOOD', 123, 123, 123, 12, 1, 0),
-('PR900867', 'ID019923', '599861', '26598', 'ID3PH-TT4X200ALCXC', 'AL CxC', '2018-07-18', '2017-10-20 15:41:04', 'Jason Chhaidan', 'Chemical', 250, 3, 159, 105, 1, 0),
-('PR910749a', 'ID432223', 'test', '324', 'test', 'test', '2018-09-09', '2019-11-06 03:12:23', 'brian williams', 'FOOD', 231, 123, 123, 23, 1, 1),
-('PR928448', 'ID394924', '234452', '144532', 'NF-CCH2X15SSCXE', 'SS CXE', '2018-10-21', '2017-10-17 12:41:04', 'Brian Williams', 'Chemical', 1000, 2, 150, 100, 1, 1),
-('PR930411', 'ID432223', '666666', '9985', 'NFX-JFSS32342-FP', 'NXE X NXE2 ', '2017-07-24', '2019-08-21 15:41:04', 'Andrew Williams', 'PSP', 125.8, 195.5, 120.5, 25, 1, 1),
-('PR933842', 'ID432223', '3453222', '6643', 'sdfdjdnfdd', 'NEFoe VS sDOd Desil', '2018-01-19', '2019-06-27 15:41:04', 'Brian Williams', 'FOOD', 2500, 125, 120, 25, 1, 1),
-('PR934234', 'ID432223', '345455', '4677', 'test', 'test', '2019-11-05', '2019-11-06 02:06:45', 'Michael Williams', 'FOOD', 125, 100, 100, 25, 1, 1),
-('PR934aa', 'ID432223', '4354', '3453', '4353', '4354', '2017-08-09', '2019-11-06 03:14:40', 'Brian Williams', 'PSP', 123, 123, 123, 12, 1, 1),
-('PR934u594', 'ID432223', '345', '435', 'test', 'test', '2017-08-09', '2019-11-06 02:26:52', 'brian williams', 'FOOD', 52, 123, 123, 11, 0, 0),
-('PR9374534', 'ID432223', '345435', '34', 'test', 'test', '2016-09-09', '2019-11-06 02:34:06', 'michael Williams', 'PSP', 123, 123, 123, 12, 1, 1),
-('PR982374', 'ID432223', '3453', '345', 'teste', 'test', '2019-08-08', '2019-11-09 16:28:44', 'brian williams', 'food', 234, 123, 123, 12, 1, 1),
-('PR986837', 'ID432223', '453454', '4355', 'test', 'test', '2019-11-25', '2019-11-06 02:11:15', 'Brian Williams', 'PSP', 125, 100, 100, 25, 1, 0),
-('PR9874344', 'ID432223', '435test', 'test', 'teste', 'test', '2019-09-09', '2019-11-09 16:29:48', 'test', 'test', 123, 123, 123, 12, 1, 1);
+INSERT INTO `product` (`ProductID`, `Username`, `CustomerPO`, `OrderNum`, `Part`, `Fittings`, `testDate`, `creationDate`, `TestedBy`, `HoseType`, `Pressure`, `HoseDiameter`, `HoseLength`, `Temperature`, `CRN`, `InService`, `HAWP`, `tempMin`) VALUES
+('ID10007', 'ID432223', '45345', '345454', '345', 'test', '2019-08-23', '2019-11-09 08:18:48', 'brian willimas', 'PGP', 234, 123, 123, 23, 'No', '1', 0, 0),
+('PR00001', 'ID432223', 'testtewt', 'testtett', 'testtewt', 'teststet', '2006-12-31', '2019-11-15 01:53:38', 'Brian Williams', 'FOOD', 12344, 12, 123, 123, 'Yes', 'Out of Service', 0, 0),
+('PR00002', 'ID432223', 'test', 'testet', 'test', 'test', '2019-09-02', '2019-11-15 01:55:50', 'Brian Williams', 'FOOD', 2134, 12, 123, 123, 'No', 'In Service', 0, 0),
+('PR00003', 'ID432223', 'ttest', '1234', 'tes', 'test', '2018-09-23', '2019-11-15 03:56:11', 'Brian Williams', '45', 123, 12, 12, -24.22, 'Yes', 'Out of Service', 0, 0),
+('PR00005', 'ID432223', 'tes', 'test', 'test', 'test', '2019-12-12', '2019-11-17 03:32:52', 'Joe Faultless', 'FOOD', 2345, 45, 123, 245, 'Yes', 'In Service', 123, 44321),
+('PR00006', 'ID432223', 'test', 'test', 'test', 'test', '2012-12-03', '2019-11-17 04:10:31', 'Joe Faultless', 'FOOD', 1234, 45, 123, 450, 'Yes', 'In Service', -45, 4321),
+('PR00007', 'ID432223', 'test', 'test', 'test', 'tes', '2011-11-11', '2019-11-17 04:14:13', 'Joe Faultless', 'FOOD', 55555, 12, 123, 66, 'Yes', 'Out of Service', -45, 77777),
+('PR00008', 'ID432223', 'test', 'test', 'test', 'test', '2011-11-11', '2019-11-17 04:20:24', 'Joe Faultless', 'FOOD', 44444, 45, 123, 145, 'Yes', 'Out of Service', 77777, -45),
+('PR00009', 'ID432223', 'test', 'test', 'test', 'test', '2011-02-23', '2019-11-17 04:22:04', 'Joe Faultless', 'FOOD', 44444, 25, 123, 145, 'Yes', 'Out of Service', 77777, -45),
+('PR00010', 'ID432223', 'test', 'test', 'test', 'test', '2012-12-01', '2019-11-17 04:35:13', 'Brian Williams', 'FOOD', 4432, 53, 123, 55, 'Yes', 'In Service', 5678, -50),
+('PR009809', 'ID432223', '6543252', '7895', 'NF-PSP8X30CSFXCSF', 'CS Flange', '2019-10-30', '2017-10-27 15:41:00', 'Brian Williams', 'PSP', 1050, 3.6, 225, 175, '1', '1', 0, 0),
+('PR009809-z', 'ID432223', 'test', 'estest', 'est', 'test', '2013-08-09', '2019-11-06 03:32:37', 'brian williams', 'food', 123, 123, 123, 12, '1', '1', 0, 0),
+('PR235112', 'ID432223', '4322345', '3222', 'fin340ffef', 'NRF-efin34', '2018-08-12', '2019-08-27 15:41:04', 'Brian Williams', 'PSP', 2500, 125, 80, 25, '1', '1', 0, 0),
+('PR34353', 'ID432223', 'test', '34545', 'test', 'tes', '2019-11-05', '2019-11-06 02:03:28', 'Brian Williams', 'FOOD', 100, 100, 100, 23, '1', '1', 0, 0),
+('PR4535455', 'ID432223', '3454', '43566', 'test', 'test', '2019-08-08', '2019-11-06 02:09:55', 'Brian Williams', 'FOOD', 100, 100, 100, 14, '1', '1', 0, 0),
+('PR63545345', 'ID432223', '453455', '4355', 'test', 'test', '2017-08-09', '2019-11-06 02:24:47', 'Bruce Williams', 'FOOD', 56, 56, 56, 23, '1', '1', 0, 0),
+('PR8364837a', 'ID432223', '345', '43555', 'test', 'test', '2018-08-05', '2019-11-06 02:14:06', 'Brian Williams', 'FOOD', 123, 123, 123, 24, '1', '1', 0, 0),
+('PR83648732', 'ID432223', '34324334', '2344', 'test', 'test', '2019-08-09', '2019-11-09 00:18:27', 'Brian WIlliams', '123', 123, 123, 123, 23, '1', 'Out of Service', 0, 0),
+('PR837448', 'ID432223', '374635', '3455', 'NCE X NCe', 'NCE X NCEYIGJ', '2019-09-11', '2019-11-03 16:38:32', 'Michael Williams', 'FOOD', 1100, 25, 250, 35, '1', '1', 0, 0),
+('PR837459', 'ID432223', '374635', '3455', 'NCE X NCe', 'NCE X NCEYIGJ', '2019-09-11', '2019-11-03 16:40:22', 'Michael Williams', 'FOOD', 1100, 25, 250, 35, '1', '1', 0, 0),
+('PR844356', 'ID396441', '513326', '558754', 'PH-FH2.5X25ALCXE', 'AL CxE', '2015-12-12', '2019-06-21 15:41:04', 'Billy Forenzo', 'FOOD', 550, 1, 175, 112, 'No', '1', 0, 0),
+('PR866540', 'ID432223', '345435', '3454', 'est', 'testes', '2013-02-02', '2019-11-06 02:49:05', 'andrew willians', 'PSP', 123, 123, 123, 23, '1', '0', 0, 0),
+('PR866540', 'ID823484', '239986', '45367', 'NF-PGP2X10SSAXD', 'SS A+D', '2015-10-14', '2018-10-22 15:41:04', 'Derek Williams', 'PGP', 550, 1.1, 155, 225, 'No', 'Out of Service', 0, 0),
+('PR8734384', 'ID432223', '323432', '4324', '', '', '2019-07-08', '2019-11-06 02:39:31', 'brian williams', 'FOOD', 123, 123, 123, 12, '1', '1', 0, 0),
+('PR877873', 'ID432223', '3453454', '3432', 'test', 'test', '2018-06-13', '2019-11-06 02:16:02', 'brian williams', 'FOOD', 67, 67, 67, 23, '1', '1', 0, 0),
+('PR887387', 'ID432223', '4354', '3244', 'test', 'testes', '2017-09-09', '2019-11-06 02:33:08', 'michael Williams', 'FOOD', 123, 123, 123, 21, '1', '1', 0, 0),
+('PR893738944', 'ID432223', '3454543', '454', 'test', 'test', '2019-09-09', '2019-11-09 00:20:54', 'tester', 'FOOD', 123, 123, 123, 12, '1', '0', 0, 0),
+('PR900867', 'ID019923', '599861', '26598', 'ID3PH-TT4X200ALCXC', 'AL CxC', '2018-07-18', '2017-10-20 15:41:04', 'Jason Chhaidan', 'Chemical', 250, 3, 159, 105, '1', '0', 0, 0),
+('PR910749a', 'ID432223', 'test', '324', 'test', 'test', '2018-09-09', '2019-11-06 03:12:23', 'brian williams', 'FOOD', 231, 123, 123, 23, '1', '1', 0, 0),
+('PR928448', 'ID394924', '234452', '144532', 'NF-CCH2X15SSCXE', 'SS CXE', '2018-10-21', '2017-10-17 12:41:04', 'Brian Williams', 'Chemical', 1000, 2, 150, 100, '1', '1', 0, 0),
+('PR930411', 'ID432223', '666666', '9985', 'NFX-JFSS32342-FP', 'NXE X NXE2 ', '2017-07-24', '2019-08-21 15:41:04', 'Andrew Williams', 'PSP', 125.8, 195.5, 120.5, 25, '1', '1', 0, 0),
+('PR933842', 'ID432223', '3453222', '6643', 'sdfdjdnfdd', 'NEFoe VS sDOd Desil', '2018-01-19', '2019-06-27 15:41:04', 'Brian Williams', 'FOOD', 2500, 125, 120, 25, '1', '1', 0, 0),
+('PR934234', 'ID432223', '345455', '4677', 'test', 'test', '2019-11-05', '2019-11-06 02:06:45', 'Michael Williams', 'FOOD', 125, 100, 100, 25, '1', '1', 0, 0),
+('PR934aa', 'ID432223', '4354', '3453', '4353', '4354', '2017-08-09', '2019-11-06 03:14:40', 'Brian Williams', 'PSP', 123, 123, 123, 12, '1', '1', 0, 0),
+('PR934u594', 'ID432223', '345', '435', 'test', 'test', '2017-08-09', '2019-11-06 02:26:52', 'brian williams', 'FOOD', 52, 123, 123, 11, '0', '0', 0, 0),
+('PR9374534', 'ID432223', '345435', '34', 'test', 'test', '2016-09-09', '2019-11-06 02:34:06', 'michael Williams', 'PSP', 123, 123, 123, 12, '1', '1', 0, 0),
+('PR982374', 'ID432223', '3453', '345', 'teste', 'test', '2019-08-08', '2019-11-09 16:28:44', 'brian williams', 'food', 234, 123, 123, 12, '1', '1', 0, 0),
+('PR986837', 'ID432223', '12345', '4355', 'test', 'test', '2019-11-25', '2019-11-06 02:11:15', 'Brian Williams', 'PSP', 125, 100, 100, 25, '1', '1', 0, 0),
+('PR9874344', 'ID432223', '435test', 'test', 'teste', 'test', '2019-09-09', '2019-11-09 16:29:48', 'test', 'test', 123, 123, 123, 12, '1', '1', 0, 0);
 
 -- --------------------------------------------------------
 

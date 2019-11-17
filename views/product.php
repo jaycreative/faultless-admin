@@ -42,8 +42,10 @@
               <li>Fittings: {{fittings}}</li>
               <li>Diameter: {{diameter}}</li>
               <li>Length: {{length}}</li>
-              <li>Pressure: {{pressure}}</li>
-              <li>Temperature: {{temp}}</li>
+              <li>Tested pressure: {{pressure}}</li>
+              <li>HAWP: {{HAWP}}</li>
+              <li>Minumum temperature: {{tempMin}}</li>
+              <li>Maximum temperature: {{temp}}</li>
               <li>CRN? {{crn}}</li>
               <li>Hose status: {{inService}}</li>
               <li>Last test Date: {{testDate}}</li>
@@ -176,6 +178,7 @@
                       <option value="Brian Williams">Brian Williams</option>
                       <option value="Bruce Williams">Bruce Williams</option>
                       <option value="Derek Williams">Derek Williams</option>
+                      <option value="Joe Faultless">Joe Faultless</option>
                       <!-- NEed to get other values -->
                       </select>
                     </div>

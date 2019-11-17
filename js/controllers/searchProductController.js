@@ -48,6 +48,8 @@ app.controller('searchProductController', function($scope, $http, $location, tra
      $scope.crn = "";
      $scope.inService = "";
      $scope.img="";
+     $scope.HAWP="";
+     $scope.tempMin="";
     //$scope.init();
     //need ti clear contents of details as well
      var ProductID = "%".concat(document.getElementById('ProductID').value, "%"); 
@@ -75,6 +77,11 @@ app.controller('searchProductController', function($scope, $http, $location, tra
      if(fromPressure == "") {fromPressure = '0'};
      var toPressure = document.getElementById('toPressure').value;
      if(toPressure == "") {toPressure = '99999'};
+
+     var fromHAWP = document.getElementById('fromHAWP').value;
+     if(fromHAWP == "") {fromHAWP = '0'};
+     var toHAWP = document.getElementById('toHAWP').value;
+     if(toHAWP == "") {toHAWP = '99999'};
      
      var fromDiameter = document.getElementById('fromDiameter').value;
      if(fromDiameter  == "") {fromDiameter = '0'};
@@ -87,9 +94,9 @@ app.controller('searchProductController', function($scope, $http, $location, tra
      if(toLength == "") {toLength = '1000'};
 
      var fromTemp = document.getElementById('fromTemp').value;
-     if(fromTemp == "") {fromTemp = '0'};
+     if(fromTemp == "") {fromTemp = '-500'};
      var toTemp = document.getElementById('toTemp').value;
-     if(toTemp == "") {toTemp = '1000'} ;
+     if(toTemp == "") {toTemp = '500'} ;
 
      //alert("OK");
 
@@ -133,11 +140,13 @@ app.controller('searchProductController', function($scope, $http, $location, tra
     if (CRN == null){CRN = "%"};
     if (InService == null){InService = "%"};
 
-    alert(TestedBy + " " + HoseType + " " + fromDate + " " + toDate + " "+ CRN + " " + InService);
+   // alert(TestedBy + " " + HoseType + " " + fromDate + " " + toDate + " "+ CRN + " " + InService);
 
    // alert("UE");
 
-     $http.post("functions/searchProduct.php", {'ProductID':ProductID, 'Username':Username, 'CustomerPO':CustomerPO, 'OrderNum':OrderNum, 'Part':Part, 'Fittings':Fittings, 'TestedBy':TestedBy, 'HoseType':HoseType, 'fromPressure':fromPressure,'toPressure':toPressure, 'fromTemp':fromTemp, 'toTemp':toTemp, 'fromLength':fromLength, 'toLength':toLength, 'fromDiameter':fromDiameter, 'toDiameter':toDiameter, 'CRN':CRN, 'InService':InService, 'fromDate':fromDate, 'toDate':toDate}).then(function(response){  
+   alert("HAWP is " + fromHAWP + " " + toHAWP + " and tempmin is " + fromTemp + " and temp max is " + toTemp);
+
+     $http.post("functions/searchProduct.php", {'ProductID':ProductID, 'Username':Username, 'CustomerPO':CustomerPO, 'OrderNum':OrderNum, 'Part':Part, 'Fittings':Fittings, 'TestedBy':TestedBy, 'HoseType':HoseType, 'fromPressure':fromPressure,'toPressure':toPressure, 'fromTemp':fromTemp, 'toTemp':toTemp, 'fromLength':fromLength, 'toLength':toLength, 'fromDiameter':fromDiameter, 'toDiameter':toDiameter, 'CRN':CRN, 'InService':InService, 'fromDate':fromDate, 'toDate':toDate, 'fromHAWP':fromHAWP, 'toHAWP':toHAWP}).then(function(response){  
          
         $scope.names = response.data;
         if($scope.names == "null"){
@@ -166,6 +175,8 @@ app.controller('searchProductController', function($scope, $http, $location, tra
       $scope.temp = $scope.names[index].Temperature;
       $scope.crn = $scope.names[index].CRN;
       $scope.inService = $scope.names[index].InService;
+      $scope.HAWP = $scope.names[index].HAWP;
+      $scope.tempMin = $scope.names[index].tempMin;
      //alert("working");
      
      //var x = document.getElementById("hideLink");

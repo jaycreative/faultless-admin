@@ -512,6 +512,7 @@
                       <option value="Brian Williams">Brian Williams</option>
                       <option value="Bruce Williams">Bruce Williams</option>
                       <option value="Derek Williams">Derek Williams</option>
+                      <option value="Joe Faultless">Joe Faultless</option>
                       <!-- NEed to get other values -->
                       </select>
                     </div>
@@ -528,10 +529,16 @@
                       </select>
                     </div>
                   <div class="col-2 my-col">
-                      <b>Pressure</b>
+                      <b>Tested Pressure</b>
                     </div>
                     <div class="col-4 my-col">
                       <input class="form-control mr-sm-2"  type="text" maxlength="5" min="0" max="99999" placeholder="0-99,999 PSI" aria-label="temprange" id='pressure' required>
+                    </div>
+                    <div class="col-2 my-col">
+                      <b>HAWP</b>
+                    </div>
+                    <div class="col-4 my-col">
+                      <input class="form-control mr-sm-2"  type="text" maxlength="5" min="0" max="99999" placeholder="0-99,999 PSI" aria-label="temprange" id='HAWP' required>
                     </div>
 </div>
 <div class="row my-row">
@@ -551,7 +558,14 @@
 </div>
 <div class="row my-row">
                   <div class="col-2 my-col">
-                      <b>Temperature</b>
+                      <b>Minimum Temperature</b>
+                    </div>
+                    <div class="col-4 my-col">
+                    <!-- confirm range -->
+                      <input class="form-control mr-sm-2" type="text" step="0.01" min="-500" max="500" maxlength="7" placeholder="-500.00-500.00 degrees fahrenheit" aria-label="temprange" id='tempMin' required>
+                    </div>
+                    <div class="col-2 my-col">
+                      <b>Maximum Temperature</b>
                     </div>
                     <div class="col-4 my-col">
                     <!-- confirm range -->

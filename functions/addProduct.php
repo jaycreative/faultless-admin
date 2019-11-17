@@ -21,6 +21,8 @@
       $inService = mysqli_real_escape_string($connect, $data->inService);
       $timestamp = date("Y-m-d H:i:s");
       $timestamp = mysqli_real_escape_string($connect, $timestamp);
+      $tempMin = mysqli_real_escape_string($connect, $data->tempMin);
+      $HAWP = mysqli_real_escape_string($connect, $data->HAWP);
 
      //  echo $productID;
      //  echo $PRusername;
@@ -39,13 +41,13 @@
      //  echo $inService;
      //  echo $timestamp;
 
-     $sql = "INSERT INTO product VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+     $sql = "INSERT INTO product VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
  
      $stmt = mysqli_stmt_init($connect);
     if(!mysqli_stmt_prepare($stmt, $sql)){
           echo "SQL statement failed!";
      } else {
-          mysqli_stmt_bind_param($stmt, "ssssssssssssssss", $productID, $PRusername, $customerPO, $orderNum, $part, $fittings, $testDate, $timestamp, $testedBy, $type, $pressure, $diameter, $length, $temperature, $crn, $inService );
+          mysqli_stmt_bind_param($stmt, "ssssssssssssssssss", $productID, $PRusername, $customerPO, $orderNum, $part, $fittings, $testDate, $timestamp, $testedBy, $type, $pressure, $diameter, $length, $temperature, $crn, $inService, $HAWP, $tempMin );
           $result = mysqli_stmt_execute($stmt);
           echo "$result";
         

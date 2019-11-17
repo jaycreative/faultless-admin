@@ -30,9 +30,11 @@
      $toLength = mysqli_real_escape_string($connect, $data->toLength); //
      $fromTemp = mysqli_real_escape_string($connect, $data->fromTemp); 
      $toTemp = mysqli_real_escape_string($connect, $data->toTemp);
+     $fromHAWP = mysqli_real_escape_string($connect, $data->fromHAWP); 
+     $toHAWP = mysqli_real_escape_string($connect, $data->toHAWP); 
 
      // $query = "SELECT * FROM product WHERE ProductID LIKE '$ProductID' AND Username LIKE '$Username' AND CustomerPO LIKE '$CustomerPO' AND OrderNum LIKE '$OrderNum' AND Part LIKE '$Part' AND Fittings LIKE '$Fittings' AND testDate LIKE '$TestDate' AND TestedBy LIKE '$TestedBy' AND HoseType LIKE '$HoseType' AND Pressure LIKE '$Pressure' AND HoseDiameter LIKE '$HoseDiameter' AND HoseLength LIKE '$HoseLength' AND Temperature LIKE '$Temperature' AND CRN LIKE '$CRN' AND InService LIKE '$InService' ";  
-     $sql = "SELECT * FROM product P INNER JOIN company C ON P.Username = C.Username WHERE P.ProductID LIKE ? AND P.Username LIKE ? AND P.CustomerPO LIKE ? AND P.OrderNum LIKE ? AND P.Part LIKE ? AND P.Fittings LIKE ? AND P.TestedBy LIKE ? AND P.HoseType LIKE ? AND P.CRN LIKE ? AND P.InService LIKE ? AND testDate >= ? AND testDate <= ? AND Pressure >= ? AND Pressure <= ? AND HoseDiameter >= ? AND HoseDiameter <= ? AND HoseLength >= ? AND HoseLength <= ? AND Temperature >= ? AND Temperature <= ? ORDER BY P.testDate DESC ";
+     $sql = "SELECT * FROM product P INNER JOIN company C ON P.Username = C.Username WHERE P.ProductID LIKE ? AND P.Username LIKE ? AND P.CustomerPO LIKE ? AND P.OrderNum LIKE ? AND P.Part LIKE ? AND P.Fittings LIKE ? AND P.TestedBy LIKE ? AND P.HoseType LIKE ? AND P.CRN LIKE ? AND P.InService LIKE ? AND testDate >= ? AND testDate <= ? AND Pressure >= ? AND Pressure <= ? AND HoseDiameter >= ? AND HoseDiameter <= ? AND HoseLength >= ? AND HoseLength <= ? AND tempMin >= ? AND Temperature <= ? AND HAWP >= ? AND HAWP <= ? ORDER BY P.testDate DESC ";
      
      //$result = mysqli_query($connect, $query);  
 
@@ -49,7 +51,7 @@
         if(!mysqli_stmt_prepare($stmt, $sql)){
               echo "SQL statement failed!";
          } else {
-              mysqli_stmt_bind_param($stmt, "ssssssssssssssssssss", $ProductID, $Username, $CustomerPO, $OrderNum, $Part, $Fittings, $TestedBy, $HoseType, $CRN, $InService, $fromDate, $toDate, $fromPressure, $toPressure, $fromDiameter, $toDiameter, $fromLength, $toLength, $fromTemp, $toTemp);
+              mysqli_stmt_bind_param($stmt, "ssssssssssssssssssssss", $ProductID, $Username, $CustomerPO, $OrderNum, $Part, $Fittings, $TestedBy, $HoseType, $CRN, $InService, $fromDate, $toDate, $fromPressure, $toPressure, $fromDiameter, $toDiameter, $fromLength, $toLength, $fromTemp, $toTemp, $fromHAWP, $toHAWP);
               mysqli_stmt_execute($stmt);
               $result = mysqli_stmt_get_result($stmt);
               

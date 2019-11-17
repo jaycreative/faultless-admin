@@ -84,8 +84,10 @@
                     <li>Hose type: {{hoseType}}</li>
                     <li>Diameter: {{diameter}}</li>
                     <li>Length: {{length}}</li>
-                    <li>Pressure: {{pressure}}</li>
-                    <li>Temperature: {{temp}}</li>
+                    <li>Tested pressure: {{pressure}}</li>
+                    <li>HAWP: {{HAWP}}</li>
+                    <li>Minimum temperature: {{tempMin}}</li>
+                    <li>MAximum temperature: {{temp}}</li>
                     <li>CRN? {{crn}}</li>
                     <li>Hose Status: {{inService}}</li>
                     <li>Last Test Date: {{testDate}}</li>
@@ -236,7 +238,7 @@
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>pressure from</b>
+                      <b>Tested pressure from</b>
                     </div>
 
                     <div class="col-8 my-col">
@@ -246,11 +248,31 @@
 
                   <div class="row my-row">
                     <div class="col-4 my-col">
-                      <b>pressure to</b>
+                      <b>Tested pressure to</b>
                     </div>
 
                     <div class="col-8 my-col">
                       <input class="form-control mr-sm-2" type="text" maxlength="5" placeholder="0-99,999 PSI" aria-label="orderdia" id="toPressure">
+                    </div>
+                  </div>
+
+                  <div class="row my-row">
+                    <div class="col-4 my-col">
+                      <b>HAWP from</b>
+                    </div>
+
+                    <div class="col-8 my-col">
+                      <input class="form-control mr-sm-2" type="text" maxlength="5" placeholder="0-99,999 PSI" aria-label="orderdia" id="fromHAWP">
+                    </div>
+                  </div>
+
+                  <div class="row my-row">
+                    <div class="col-4 my-col">
+                      <b>HAWP to</b>
+                    </div>
+
+                    <div class="col-8 my-col">
+                      <input class="form-control mr-sm-2" type="text" maxlength="5" placeholder="0-99,999 PSI" aria-label="orderdia" id="toHAWP">
                     </div>
                   </div>
                     
@@ -310,6 +332,7 @@
                       <option value="Brian Williams">Brian Williams</option>
                       <option value="Bruce Williams">Bruce Williams</option>
                       <option value="Derek Williams">Derek Williams</option>
+                      <option value="Joe Faultless">Joe Faultless</option>
                       </select>
                     </div>
                   </div>
