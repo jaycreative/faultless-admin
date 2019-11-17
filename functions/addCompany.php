@@ -1,9 +1,9 @@
 <?php
- //insert.php  
- $connect = mysqli_connect("localhost", "root", "20152maW", "Faultless");  
- $data = json_decode(file_get_contents("php://input"));  
- if(count($data) > 0)  
- {  
+ //insert.php
+ $connect = mysqli_connect("localhost", "root", "LastkingS01", "Faultless");  
+ $data = json_decode(file_get_contents("php://input"));
+ if(count($data) > 0)
+ {
       $username = mysqli_real_escape_string($connect, $data->username);
       $companyName = mysqli_real_escape_string($connect, $data->companyName);
       $location = mysqli_real_escape_string($connect, $data->location);
@@ -20,17 +20,17 @@
       $date = date("Y-m-d");
 
       if($Ext == ""){$Ext = "0";}
-      
 
-      $sql = "INSERT INTO company VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";  
-     //  if(mysqli_query($connect, $query))  
-     //  {  
-     //       echo "1";  
-     //  }  
-     //  else  
-     //  {  
-     //       echo "0";  
-     //  }  
+
+      $sql = "INSERT INTO company VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+     //  if(mysqli_query($connect, $query))
+     //  {
+     //       echo "1";
+     //  }
+     //  else
+     //  {
+     //       echo "0";
+     //  }
 
       $stmt = mysqli_stmt_init($connect);
       if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -39,7 +39,7 @@
             mysqli_stmt_bind_param($stmt, "sssssssssssss", $username, $companyName, $location, $firstName, $lastName, $email, $phoneNumber, $Ext, $CompanyNumber, $hoseNum, $website, $img, $date);
             $result = mysqli_stmt_execute($stmt);
             echo "$result";
-          
+
        }
- }  
+ }
  ?>
